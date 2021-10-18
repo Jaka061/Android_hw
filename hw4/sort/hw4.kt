@@ -1,4 +1,4 @@
-package less4
+package `hw4(sort)`
 
 fun main() {  // HW -4 Taalaibek kyzy Zharkynai
     var num = 0
@@ -9,12 +9,10 @@ fun main() {  // HW -4 Taalaibek kyzy Zharkynai
                 num = arr[i]
                 arr[i] = arr[j]
                 arr[j] = num
-
             }
         }
     }
     for(i in 0..arr.lastIndex){
         print("${arr[i]} ; ")
     }
-
 }

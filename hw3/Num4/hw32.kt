@@ -1,4 +1,4 @@
-package less3
+package hw3.Num4
 fun main() {
 
     println("Введите число :")
