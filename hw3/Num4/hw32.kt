@@ -1,10 +1,10 @@
-package hw3.Num4
+package hw3.Num4 // 2я домашка
 fun main() {
 
     println("Введите число :")
     var x = readLine()!!.toInt()
 
-    if( x > 999 && x <= 9999){
+    if( x > 999 && x <= 9999){ // x in 1000..9999 <- можно так )
         val x1 = x/1000%10
         val x2 = x/100%10
         val x3 = x/10%10
