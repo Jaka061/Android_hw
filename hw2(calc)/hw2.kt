@@ -1,4 +1,4 @@
-package `hw2(calc)`
+package `hw2(calc)` // cкобки в наименовании пакетов лучше не использовать
 
 fun main(){
 
@@ -6,7 +6,7 @@ fun main(){
     println("Введите число операцию (+ * - / )  ")
     val w = readLine()
     println("Введите число y:")
-    val x = readLine()!!.toInt()
+    val x = readLine()!!.toInt() // падает при "sfsd", должны обрабатывать null
     println("Введите число y:")
     val y = readLine()!!.toInt()
 
@@ -14,7 +14,7 @@ fun main(){
         "+" -> println("Сумма $x + $y = ${x+y}")
         "*" -> println("Умножение $x * $y = ${x*y}")
         "-" -> println("Вычитание $x - $y = ${x-y}")
-        "/" -> divide()
+        "/" -> divide() // странное поведение при делении, приходится заново вводить числа
         else -> println("Такой операции нет")
     }
 }
