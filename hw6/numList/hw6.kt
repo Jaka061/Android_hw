@@ -1,4 +1,4 @@
-package hw6.numList
+package hw6.numList // 5я домашка
 
 /* Зная имена и номера телефонов, составьте телефонную книгу,
 * в которой имена друзей сопоставлены с их соответствующими
@@ -43,14 +43,15 @@ fun main() {
         for (i in 1..x) {
             println("Введите Имя ")
             var name1 = readLine()!!
-            println("Введите номер *0...")
-            var num1 = readLine()!!                                              // не закончено
+            println("Введите номер *0...") // вводить номер телефона должны в одной строке вместе с именем
+            var num1 = readLine()!!                                              // не закончено <- в доке указали статус "отправлено" )
 
             list.add(name1)
             list.add(num1)
             phoneMap[i] = list
         }
-
+        
+        // нет поиска по имени
 
         println(phoneMap.keys)
         println(phoneMap.values)
