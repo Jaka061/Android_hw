@@ -1,13 +1,15 @@
 import java.util.*
 import kotlin.collections.ArrayList
 
+// это 4я домашка
+
 fun main() {
 
     println("Введите 4x знач. число :")
     var x = readLine()!!.toInt()
     val y = x
     val arrL = ArrayList<Int>()
-    if (x > 999 && x <= 9999) {
+    if (x > 999 && x <= 9999) { // x in 1000..9999 <- можно еще так будет тоже самое)
         while (x > 0) {
             arrL.add(x % 10)
             x /= 10
