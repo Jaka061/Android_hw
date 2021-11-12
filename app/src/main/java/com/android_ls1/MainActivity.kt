@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         when(v.id){
             R.id.btn1 -> {
                 txt1.text = "Красный Стой"
-                svet.setBackgroundColor(parseColor("red"))   // есть разница в использовании svet и svetofor, Они одинаково работают ?
+                svet.setBackgroundColor(parseColor("red"))   //есть разница в использовании svet и svetofor, Они одинаково работают ?
                 btn1.setBackgroundColor(parseColor("white"))
             }
             R.id.btn2 -> {
