@@ -13,7 +13,7 @@
         android:id="@+id/hello1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+          android:text="Hello World!"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintVertical_bias="0.4"
