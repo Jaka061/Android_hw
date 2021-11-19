@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var  txt1 : AppCompatTextView
     private lateinit var btn1 : AppCompatButton
-    var count = 0
+    private var count:Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         btn1 = findViewById<AppCompatButton>(R.id.button)
 
         btn1.setOnClickListener {
-            val countTxt = txt1.text.toString()
-            count = Integer.parseInt(countTxt)
             count++
             txt1.text = count.toString()
         }
@@ -33,5 +32,6 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         count = savedInstanceState.getInt("count")
+        txt1.text = count.toString()
     }
 }
