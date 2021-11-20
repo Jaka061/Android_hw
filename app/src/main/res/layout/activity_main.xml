@@ -4,58 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_background"
+    android:background="#F7B8844E"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="100sp"
+        android:text="@string/txt"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:layout_margin="10dp"
         android:textColor="@android:color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@id/plus"
+        app:layout_constraintVertical_chainStyle="spread"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/eEmail"
+    />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/plus"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/email"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
+        android:text="@string/text1"
         android:textSize="25sp"
-        android:text=" + "
-        android:padding="28dp"
-        app:layout_constraintBottom_toBottomOf="@id/txt"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@id/minus"
-        app:layout_constraintTop_toBottomOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/minus"
-        android:layout_width="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/eEmail"
+        app:layout_constraintTop_toBottomOf="@id/txt"
+        app:layout_constraintBottom_toTopOf="@id/eTitle" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/eEmail"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text=" - "
-        android:padding="28dp"
-        app:layout_constraintBottom_toBottomOf="@id/txt"
-        app:layout_constraintLeft_toLeftOf="@id/plus"
-        app:layout_constraintRight_toRightOf="@id/multiply"
-        app:layout_constraintTop_toBottomOf="parent" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/multiply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text=" * "
-        android:padding="28dp"
-        app:layout_constraintBottom_toBottomOf="@id/txt"
-        app:layout_constraintLeft_toLeftOf="@id/minus"
+        android:padding="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:hint="@string/edit_email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/email"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/txt"
+        app:layout_constraintBottom_toTopOf="@id/eTitle"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/eTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginHorizontal="30dp"
+        android:hint="@string/title"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eEmail"
+        app:layout_constraintBottom_toTopOf="@+id/eText"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/eText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginHorizontal="30dp"
+        android:hint="@string/edit_text"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eTitle"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:text="@string/send"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eText"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 

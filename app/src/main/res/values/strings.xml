@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Android_ls1</string>
+    <string name="edit_email">Edit email</string>
+    <string name="edit_text">Edit text</string>
+    <string name="send">Send</string>
+    <string name="text1">Кому :</string>
+    <string name="txt">- Письмо -</string>
+    <string name="title">Edit title</string>
 </resources>
