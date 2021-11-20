@@ -11,7 +11,7 @@ import androidx.appcompat.widget.AppCompatTextView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var  email : AppCompatEditText
+    private lateinit var  email1 : AppCompatEditText
     private lateinit var  title1 : AppCompatEditText
     private lateinit var  text1 : AppCompatEditText
     private lateinit var btn1 : AppCompatButton
@@ -19,15 +19,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        email = findViewById<AppCompatEditText>(R.id.eEmail)
-        email = findViewById<AppCompatEditText>(R.id.eTitle)
-        email = findViewById<AppCompatEditText>(R.id.eText)
+        email1 = findViewById<AppCompatEditText>(R.id.eEmail)
+        title1 = findViewById<AppCompatEditText>(R.id.eTitle)
+        text1 = findViewById<AppCompatEditText>(R.id.eText)
         btn1 = findViewById<AppCompatButton>(R.id.button)
 
 
         btn1.setOnClickListener {
-            var email1 = email.text
+            val email2 = email1.text.toString()
+            val title2 = title1.text.toString()
+            val text2 = text1.text.toString()
+
+            val mail = arrayOf(email2.toString())
+            var emailSend = Intent(Intent.ACTION_SEND)
+            emailSend.putExtra(Intent.EXTRA_EMAIL, mail)
+            emailSend.putExtra(Intent.EXTRA_SUBJECT,title2)
+            emailSend.putExtra(Intent.EXTRA_TEXT,text2)
+
+            emailSend.type = "message/rfc822"
+            startActivity(Intent.createChooser(emailSend," Email "))
         }
+
     }
 
 }
