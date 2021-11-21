@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black"
+    android:background="#5D23D3"
     tools:context=".MainActivity">
 <!--txt-->
 
@@ -16,7 +16,6 @@
         android:text=""
         android:textAlignment="textEnd"
         android:ellipsize="start"
-        android:maxLines="2"
         android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         android:textSize="30sp"

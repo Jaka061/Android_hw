@@ -82,8 +82,8 @@ class MainActivity : AppCompatActivity() {
             }catch(e : ArithmeticException){
                 Log.e("Ошибка :"," ${e.message}")
                 txtResult.text = "На 0 делить нельзя !"
-            }
-            catch (e:Exception){
+
+            }catch (e: Exception){
                 Log.e("Ошибка :"," ${e.message}")
                 txtResult.text = "Ошибка !"
             }
