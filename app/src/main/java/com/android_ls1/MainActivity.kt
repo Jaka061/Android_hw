@@ -86,14 +86,15 @@ class MainActivity : AppCompatActivity() {
                 Log.e("Ошибка :"," $e")
                 txtResult.text = "Ошибка !"
             }
+
+
         }
     }
     fun txtCalc (string : String ) {
+         txtInput.append(string)
         if(txtResult.text.isNotEmpty()){
-            txtInput.text = txtResult.text
             txtResult.text=""
         }
-        txtInput.append(string)
     }
 
 }
