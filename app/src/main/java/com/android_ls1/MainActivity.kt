@@ -26,18 +26,6 @@ class MainActivity : AppCompatActivity() {
 
 
         btn1.setOnClickListener {
-            val email2 = email1.text.toString()
-            val title2 = title1.text.toString()
-            val text2 = text1.text.toString()
-
-            val mail = arrayOf(email2.toString())
-            var emailSend = Intent(Intent.ACTION_SEND)
-            emailSend.putExtra(Intent.EXTRA_EMAIL, mail)
-            emailSend.putExtra(Intent.EXTRA_SUBJECT,title2)
-            emailSend.putExtra(Intent.EXTRA_TEXT,text2)
-
-            emailSend.type = "message/rfc822"
-            startActivity(Intent.createChooser(emailSend," Email "))
         }
 
     }
