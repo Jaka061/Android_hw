@@ -79,21 +79,21 @@ class MainActivity : AppCompatActivity() {
                 }else{
                     txtResult.text = res1.toString()
                 }
-            }catch(e : ArithmeticException){
-                Log.e("Ошибка :"," ${e.message}")
+            } catch(e:ArithmeticException){
+                Log.e("Ошибка :"," $e")
                 txtResult.text = "На 0 делить нельзя !"
-
-            }catch (e: Exception){
-                Log.e("Ошибка :"," ${e.message}")
+            }catch (e:Exception){
+                Log.e("Ошибка :"," $e")
                 txtResult.text = "Ошибка !"
             }
         }
     }
     fun txtCalc (string : String ) {
-        if (txtResult.text != " "){
-            txtInput.text == txtResult.text
-            txtResult.text = ""
-        }else{ txtInput.append(string) }
+        if(txtResult.text.isNotEmpty()){
+            txtInput.text = txtResult.text
+            txtResult.text=""
+        }
+        txtInput.append(string)
     }
 
 }
