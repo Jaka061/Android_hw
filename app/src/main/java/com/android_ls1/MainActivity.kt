@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var  txt1 : AppCompatTextView
     private lateinit var btn1 : AppCompatButton
+    private lateinit var btn2 : AppCompatButton
     private var count:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,10 +19,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         txt1 = findViewById<AppCompatTextView>(R.id.txt)
         btn1 = findViewById<AppCompatButton>(R.id.button)
+        btn2 = findViewById<AppCompatButton>(R.id.button1)
 
         btn1.setOnClickListener {
             count++
             txt1.text = count.toString()
+        }
+        btn2.setOnClickListener {
+            if(txt1.text != "0") {
+                txt1.text = "0"
+            }
         }
     }
 
