@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         btn2.setOnClickListener {
             if(txt1.text != "0") {
                 txt1.text = "0"
+                count = 0
             }
         }
     }
