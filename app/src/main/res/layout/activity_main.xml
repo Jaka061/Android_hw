@@ -37,52 +37,54 @@
         app:layout_constraintRight_toLeftOf="@id/eEmail"
         app:layout_constraintTop_toBottomOf="@id/txt"
         app:layout_constraintBottom_toTopOf="@id/eTitle" />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/eEmail"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:layout_marginHorizontal="20dp"
+        android:background="@drawable/btn"
         android:hint="@string/edit_email"
         android:inputType="textEmailAddress"
-        android:background="@drawable/btn"
+        android:padding="15dp"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/eTitle"
         app:layout_constraintLeft_toRightOf="@id/email"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt"
-        app:layout_constraintBottom_toTopOf="@id/eTitle"
-        />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/eTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:layout_marginHorizontal="30dp"
+        android:background="@drawable/btn"
         android:hint="@string/title"
         android:inputType="text"
-        android:background="@drawable/btn"
+        android:padding="15dp"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/eText"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/eEmail"
-        app:layout_constraintBottom_toTopOf="@+id/eText"/>
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/eText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:layout_marginHorizontal="30dp"
+        android:background="@drawable/btn"
         android:hint="@string/edit_text"
         android:inputType="text"
-        android:background="@drawable/btn"
+        android:padding="15dp"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/eTitle"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        />
+        tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
