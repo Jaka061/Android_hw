@@ -15,23 +15,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recycler = findViewById<RecyclerView>(R.id.recycler)
-        val layoutManager = LinearLayoutManager(this)
-        val adapter = SimpleAdapter {
-             val intent = Intent(this,MainActivity2::class.java)
-            intent.putExtra("text", "Item-$it")
-            startActivity(intent)
+        val recycle = findViewById<RecyclerView>(R.id.recycler)
+        val layMan = LinearLayoutManager(this)
+        val adapter = SimpleAdapter{
+            Toast.makeText(this,"Item -$it",Toast.LENGTH_SHORT).show()
         }
 
-        recycler.layoutManager = layoutManager
-        recycler.adapter = adapter
-        recycler.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
+        recycle.layoutManager = layMan
+        recycle.adapter =adapter
+        recycle.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
+
 
         val list = mutableListOf<String>()
         for (i in 0..20) {
             list.add("ITEM -$i")
         }
         adapter.setData(list)
-    }
-
+        }
 }
