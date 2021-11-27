@@ -9,8 +9,15 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        val txt = findViewById<TextView>(R.id.txt2)
-        val textItem = intent.getStringExtra("text")
-        txt.text = textItem
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frag_cont,Fragment1()).commit()
+
+
+
+
+
+//        val txt = findViewById<TextView>(R.id.txt2)
+//        val textItem = intent.getStringExtra("text")
+//        txt.text = textItem
     }
 }
