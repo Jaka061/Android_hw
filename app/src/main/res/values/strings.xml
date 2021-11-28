@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Android</string>
-    <string name="this_item">THIS ITEM</string>
+    <string name="this_item" translatable="false">THIS ITEM</string>
+    <string name="fragment_1" translatable="false">Fragment 1</string>
+    <string name="click" translatable="false">Click</string>
+    <string name="fragment_2" translatable="false">Fragment 2</string>
+    <string name="click_1">Click 1</string>
+    <string name="click_2">Click 2</string>
+    <string name="click_3">Click 3</string>
 </resources>
