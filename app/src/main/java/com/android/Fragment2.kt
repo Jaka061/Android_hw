@@ -11,6 +11,7 @@ class Fragment2 : Fragment(R.layout.fragment2){
     private lateinit var txt : AppCompatTextView
     private lateinit var image1 : AppCompatImageView
 
+    var txt2 = ""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -20,5 +21,4 @@ class Fragment2 : Fragment(R.layout.fragment2){
     fun setText(entText :String){
         txt.text = entText
     }
-
 }
