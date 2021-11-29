@@ -7,6 +7,9 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class Fragment1 : Fragment(R.layout.fragment) {
 
@@ -24,19 +27,22 @@ class Fragment1 : Fragment(R.layout.fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        txt = view.findViewById(R.id.fragTxt)
-        btn = view.findViewById(R.id.btn1)
-        edit = view.findViewById(R.id.edit)
-
-
-        btn.setOnClickListener {
-            val text = edit.text
-            listener.setText1(text.toString())
+        val recycler = view.findViewById<RecyclerView>(R.id.recycler)
+        val layoutManager = LinearLayoutManager(activity)
+        val adapter = SimpleAdapter {
+            val text = "Item-$it"
+            listener.setText1(text)
         }
 
-    }
-    fun setText(entText :String){
-        txt.text = entText
-    }
+        recycler.layoutManager = layoutManager
+        recycler.adapter = adapter
+        recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
+        val list = mutableListOf<String>()
+        for (i in 0..20) {
+            list.add("ITEM -$i")
+        }
+        adapter.setData(list)
+
+    }
 }

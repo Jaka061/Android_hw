@@ -5,10 +5,13 @@
       <map>
         <entry key="..\:/Files/Android/app/src/main/res/drawable/btn.xml" value="0.35625" />
         <entry key="..\:/Files/Android/app/src/main/res/drawable/view.xml" value="0.35625" />
-        <entry key="..\:/Files/Android/app/src/main/res/layout-land/activity_main.xml" value="0.43697916666666664" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout-land/activity_main.xml" value="0.33" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout/activity_main1.xml" value="0.17864583333333334" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout/activity_main2.xml" value="0.31875" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/fragment.xml" value="0.25" />
-        <entry key="..\:/Files/Android/app/src/main/res/layout/fragment2.xml" value="0.3359375" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout/fragment2.xml" value="0.25" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout/recycle.xml" value="0.234375" />
       </map>
     </option>
   </component>
