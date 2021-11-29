@@ -7,7 +7,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatTextView
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,8 +29,8 @@ class MainActivity : AppCompatActivity() {
             val title2 = title1.text.toString()
             val text2 = text1.text.toString()
 
-            val mail = arrayOf(email2.toString())
-            var emailSend = Intent(Intent.ACTION_SEND)
+            val mail = arrayOf(email2)
+            val emailSend = Intent(Intent.ACTION_SEND)
             emailSend.putExtra(Intent.EXTRA_EMAIL, mail)
             emailSend.putExtra(Intent.EXTRA_SUBJECT,title2)
             emailSend.putExtra(Intent.EXTRA_TEXT,text2)

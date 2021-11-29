@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextEdit">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:background">@drawable/btn</item>
+        <item name="android:inputType">text</item>
+    </style>
+    <style name="txtTitle">
+        <item name="android:text">@string/txt</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="txtEmail">
+        <item name="android:text">@string/text1</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="btnSend">
+        <item name="android:text">@string/send</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/view</item>
+        <item name="android:paddingHorizontal">25dp</item>
+        <item name="android:paddingVertical">15dp</item>
+    </style>
+
+</resources>
