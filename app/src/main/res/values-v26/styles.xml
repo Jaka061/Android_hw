@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="HomeWork">
+        <item name="android:paddingHorizontal">35dp</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/black</item>
+<!--        <item name="background">@drawable/view</item>-->
+    </style>
+    <style name="txt">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginHorizontal">14dp</item>
+        <item name="android:text">"0"</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+</resources>
