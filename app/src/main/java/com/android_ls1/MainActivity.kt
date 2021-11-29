@@ -9,11 +9,14 @@ import net.objecthunter.exp4j.ExpressionBuilder
 import kotlin.math.min
 
 class MainActivity : AppCompatActivity() {
+    
+    // hw-10: отформатировать код
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // hw-10: этот блок можно вынести в одельный метод
         zero.setOnClickListener { txtCalc("0") }
         one.setOnClickListener { txtCalc("1") }
         two.setOnClickListener { txtCalc("2") }
@@ -26,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         nine.setOnClickListener { txtCalc("9") }
 
         plus.setOnClickListener {
-            var txt = txtInput.text.toString()
+            // hw-10: вынести в отдельный метод plus()
+            var txt = txtInput.text.toString() // hw-10: -> val
             if(txt.isNotEmpty()){
                 txtInput.append("+").toString()
             }else{
@@ -34,12 +38,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
         minus.setOnClickListener { var txt = txtInput.text.toString()
+            // hw-10: вынести в отдельный метод minus()
             if(txt.isNotEmpty()){
                 txtInput.append("-").toString()
             }else{
                 txtInput.append("0-").toString()
             } }
         multiply.setOnClickListener { var txt = txtInput.text.toString()
+            // hw-10: так же
             if(txt.isNotEmpty()){
                 txtInput.append("*").toString()
             }
@@ -47,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                 txtInput.append("0*").toString() }
         }
         divider.setOnClickListener {
-            var txt = txtInput.text.toString()
+            // hw-10: так же
+            var txt = txtInput.text.toString() // hw-10: -> val
             if(txt.isNotEmpty()){
                 txtInput.append("/").toString()
             }else{
@@ -62,18 +69,20 @@ class MainActivity : AppCompatActivity() {
             txtResult.text = ""
         }
         delete.setOnClickListener {
-            var txt = txtInput.text.toString()
+            // hw-10: так же
+            var txt = txtInput.text.toString() // hw-10: -> val
             if(txt.isNotEmpty()){
                 txtInput.text = txt.substring(0,txt.length -1)
             }
             txtResult.text = ""
         }
         result.setOnClickListener {
+            // hw-10: так же
             try {
-                var res = ExpressionBuilder(txtInput.text.toString()).build()
-                var res1 = res.evaluate()
+                var res = ExpressionBuilder(txtInput.text.toString()).build() // hw-10: -> val
+                var res1 = res.evaluate() // hw-10: -> val
 
-                var long = res1.toLong()
+                var long = res1.toLong() // hw-10: -> val
                 if(res1 == long.toDouble()){
                     txtResult.text = long.toString()
                 }else{
