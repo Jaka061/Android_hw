@@ -7,7 +7,7 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import kotlinx.android.synthetic.main.activity_sec.*
+import kotlinx.android.synthetic.main.activity_sec.* // <- эта либа уже деприкэйтет, желательно ее не использовать
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity() {
             R.id.btn1 -> {
                 txt1.text = "Красный Стой"
                 svet.setBackgroundColor(parseColor("red"))   //есть разница в использовании svet и svetofor, Они одинаково работают ?
-                btn1.setBackgroundColor(parseColor("white"))
+                btn1.setBackgroundColor(parseColor("white")) // в данном случае разницы нет. svet - ваша переменная, где Вы вручную инициализировали с findViewById(..svetofor)
+                                                             // svetofor - эту переменную создал для Вас kotlinx.synthetic на основе идентификатора
             }
             R.id.btn2 -> {
                 txt1.text = "Желтый Жди "
