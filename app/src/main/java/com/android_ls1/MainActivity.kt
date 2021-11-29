@@ -10,6 +10,9 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
 
 class MainActivity : AppCompatActivity() {
+    
+    // отформатировать код
+    // так же отформатировать код в activity_main.xml
 
     private lateinit var  email1 : AppCompatEditText
     private lateinit var  title1 : AppCompatEditText
@@ -30,8 +33,8 @@ class MainActivity : AppCompatActivity() {
             val title2 = title1.text.toString()
             val text2 = text1.text.toString()
 
-            val mail = arrayOf(email2.toString())
-            var emailSend = Intent(Intent.ACTION_SEND)
+            val mail = arrayOf(email2.toString()) // лишний toString()
+            var emailSend = Intent(Intent.ACTION_SEND) // -> val
             emailSend.putExtra(Intent.EXTRA_EMAIL, mail)
             emailSend.putExtra(Intent.EXTRA_SUBJECT,title2)
             emailSend.putExtra(Intent.EXTRA_TEXT,text2)
