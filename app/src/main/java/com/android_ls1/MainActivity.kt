@@ -9,6 +9,7 @@ import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
 
+    // будет краш на старте )
     private val zero: AppCompatButton = findViewById(R.id.zero)
     private val one :AppCompatButton = findViewById(R.id.one)
     private val two: AppCompatButton = findViewById(R.id.two)
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         result.setOnClickListener {
             result()
         }
-    }
+    } // пустую строку после метода
     private fun txtCalc (string : String ) {
          txtInput.append(string)
         if(txtResult.text.isNotEmpty()){
@@ -63,7 +64,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun OnClick(){
+    // лучше назвать метод типа ~initDigitsClickListeners()
+    private fun OnClick(){ // методы всегда начинаются с маленькой буквы, классы с большой
         zero.setOnClickListener { txtCalc("0") }
         one.setOnClickListener { txtCalc("1") }
         two.setOnClickListener { txtCalc("2") }
@@ -90,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         }else{
             txtInput.append("0-").toString()
         }
-    }
+    } // пустую строку после метода
     fun plus(){
         val txt = txtInput.text.toString()
         if(txt.isNotEmpty()){
@@ -98,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         }else{
             txtInput.append("0+").toString()
         }
-    }
+    } // пустую строку после метода
     private fun multiply(){
         val txt = txtInput.text.toString()
         if(txt.isNotEmpty()){
@@ -106,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             txtInput.append("0*").toString() }
-    }
+    }// пустую строку после метода
     private fun divider(){
         val txt = txtInput.text.toString()
         if(txt.isNotEmpty()){
