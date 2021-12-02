@@ -27,14 +27,14 @@ class Fragment1 : Fragment(R.layout.fragment) {
         txt = view.findViewById(R.id.fragTxt)
         btn = view.findViewById(R.id.btn1)
         edit = view.findViewById(R.id.edit)
-
+// remove line
 
         btn.setOnClickListener {
             val text = edit.text
             listener.setText1(text.toString())
         }
 
-    }
+    } // add line
     fun setText(entText :String){
         txt.text = entText
     }

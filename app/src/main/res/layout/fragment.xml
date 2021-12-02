@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/edit"
         />
-
+    <!-- remove line -->
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/edit"
@@ -29,7 +29,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragTxt"
         />
-
+    <!-- remove line -->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn1"
@@ -40,8 +40,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit"
         app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-
+    <!-- remove line -->
+    <!-- remove line -->
+    <!-- remove line -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

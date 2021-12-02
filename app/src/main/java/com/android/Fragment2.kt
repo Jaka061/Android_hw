@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatImageView //remove import
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 
@@ -19,10 +19,10 @@ class Fragment2 : Fragment(R.layout.fragment2){
     override fun onAttach(context: Context) {
         super.onAttach(context)
         listener = context as onBtnClicked
-    }
+    } // add line
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+// remove line
 
         txt2 = view.findViewById(R.id.frag2Txt)
         edit2 = view.findViewById(R.id.edit2)
@@ -32,7 +32,7 @@ class Fragment2 : Fragment(R.layout.fragment2){
             val text = edit2.text
             listener.setText2(text.toString())
         }
-    }
+    } // add line
     fun setText2(entText :String){
         txt2.text = entText
     }
