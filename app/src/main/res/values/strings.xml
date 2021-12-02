@@ -4,4 +4,5 @@
     <string name="send" translatable="false">Send</string>
     <string name="fragment_2" translatable="false">Fragment 2</string>
     <string name="edit_text">Edit text</string>
+    <string name="click">Click</string>
 </resources>

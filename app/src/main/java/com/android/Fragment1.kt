@@ -10,17 +10,17 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.databinding.Fragment2Binding
+import com.android.databinding.FragmentBinding
 
 class Fragment1 : Fragment(R.layout.fragment) {
 
-    private lateinit var txt : AppCompatTextView
-    private lateinit var btn : AppCompatButton
-    private lateinit var edit: AppCompatEditText
-
+    private lateinit var binding : FragmentBinding
     private lateinit var listener : onBtnClicked
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        binding = FragmentBinding.inflate(layoutInflater)
         listener = context as onBtnClicked
     }
 
