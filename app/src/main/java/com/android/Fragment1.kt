@@ -13,12 +13,11 @@ class Fragment1 : Fragment(R.layout.fragment) {
     private lateinit var txt : AppCompatTextView
     private lateinit var btn : AppCompatButton
     private lateinit var edit: AppCompatEditText
-
-    private lateinit var listener : onBtnClicked
+    private lateinit var listener : OnBtnClicked
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as onBtnClicked
+        listener = context as OnBtnClicked
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,13 +27,12 @@ class Fragment1 : Fragment(R.layout.fragment) {
         btn = view.findViewById(R.id.btn1)
         edit = view.findViewById(R.id.edit)
 
-
         btn.setOnClickListener {
             val text = edit.text
             listener.setText1(text.toString())
         }
-
     }
+
     fun setText(entText :String){
         txt.text = entText
     }

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frag1"
         android:name="com.android.Fragment1"
@@ -17,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frag2"
         android:name="com.android.Fragment2"
@@ -27,6 +25,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frag1" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

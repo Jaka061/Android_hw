@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 
@@ -14,15 +13,15 @@ class Fragment2 : Fragment(R.layout.fragment2){
     private lateinit var txt2 :  AppCompatTextView
     private lateinit var edit2 : AppCompatEditText
     private lateinit var btn2 :  AppCompatButton
+    private lateinit var listener : OnBtnClicked
 
-    private lateinit var listener : onBtnClicked
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as onBtnClicked
+        listener = context as OnBtnClicked
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         txt2 = view.findViewById(R.id.frag2Txt)
         edit2 = view.findViewById(R.id.edit2)
@@ -33,6 +32,7 @@ class Fragment2 : Fragment(R.layout.fragment2){
             listener.setText2(text.toString())
         }
     }
+
     fun setText2(entText :String){
         txt2.text = entText
     }
