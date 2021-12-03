@@ -11,7 +11,13 @@
         android:theme="@style/Theme.Android">
         <activity
             android:name=".MainActivity2"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="myActivity2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
