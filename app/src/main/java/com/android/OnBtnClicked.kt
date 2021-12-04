@@ -1,6 +1,6 @@
 package com.android
 
-interface onBtnClicked {
+interface OnBtnClicked {
 
     fun setText1(enterText :String)
 

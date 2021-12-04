@@ -3,7 +3,7 @@ package com.android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity(), onBtnClicked {
+class MainActivity : AppCompatActivity(), OnBtnClicked {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,15 +11,19 @@ class MainActivity : AppCompatActivity(), onBtnClicked {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.frag1,Fragment1()).commit()
-
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frag2,Fragment2()).commit()
+            .add(R.id.frag_cont,Fragment1()).commit()
 
     }
     override fun setText1(enterText: String) {
-        val fragment2 = supportFragmentManager.findFragmentById(R.id.frag2) as? Fragment2
-        fragment2?.setText2(enterText)
+        val fragment2 = Fragment2()
+        val bundle = Bundle()
+        bundle.putString("text",enterText)
+        fragment2.arguments = bundle
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frag_cont,fragment2)
+            .addToBackStack(null)
+            .commit()
     }
 
 }
