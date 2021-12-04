@@ -3,18 +3,16 @@ package com.android
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.android.databinding.ActivityMainBinding
+import androidx.appcompat.widget.AppCompatTextView
 
 class MainActivity : AppCompatActivity(), OnBtnClicked {
 
-    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        supportFragmentManager.beginTransaction()
+       supportFragmentManager.beginTransaction()
             .add(R.id.frag_cont,Fragment1()).commit()
     }
 
@@ -29,9 +27,9 @@ class MainActivity : AppCompatActivity(), OnBtnClicked {
             .addToBackStack(null).commit()
     }
 
-    override fun onClick(){
+    override fun onClick(txtAct: String){
         val intent = Intent("myActivity2")
-        intent.putExtra("text", "Main Activity2")
+        intent.putExtra("text", txtAct)
         startActivity(intent)
     }
 

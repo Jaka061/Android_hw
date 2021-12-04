@@ -14,7 +14,6 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:text=""
-        android:background="@android:color/holo_green_light"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

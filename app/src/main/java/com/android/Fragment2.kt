@@ -6,11 +6,9 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
-import com.android.databinding.Fragment2Binding
 
 class Fragment2 : Fragment(R.layout.fragment2){
 
-    //private lateinit var binding : Fragment2Binding
     private lateinit var listener : OnBtnClicked
 
     override fun onAttach(context: Context) {
@@ -28,7 +26,8 @@ class Fragment2 : Fragment(R.layout.fragment2){
         txt.text = textFr
 
         btn.setOnClickListener {
-            listener.onClick()
+            listener.onClick(textFr.toString())
+
         }
 
 

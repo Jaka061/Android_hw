@@ -13,7 +13,6 @@ import com.android.databinding.FragmentBinding
 
 class Fragment1 : Fragment(R.layout.fragment) {
 
-    private lateinit var binding : FragmentBinding
     private lateinit var listener : OnBtnClicked
 
     override fun onAttach(context: Context) {
@@ -21,24 +20,20 @@ class Fragment1 : Fragment(R.layout.fragment) {
         listener = context as OnBtnClicked
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentBinding.inflate(inflater)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val recycler = view.findViewById<RecyclerView>(R.id.recycler)
+
         val layoutManager = LinearLayoutManager(activity)
         val adapter = SimpleAdapter {
-            val text = "Item-$it"
+            val text = "ITEM-$it"
             listener.setText1(text)
         }
 
-        binding.apply {
             recycler.layoutManager = layoutManager
             recycler.adapter = adapter
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
-        }
+
         val list = mutableListOf<String>()
         for (i in 0..20) {
             list.add("ITEM -$i")
