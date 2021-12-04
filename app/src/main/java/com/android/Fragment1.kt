@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 class Fragment1 : Fragment(R.layout.fragment) {
 
     private lateinit var listener : OnBtnClicked
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         listener = context as OnBtnClicked
