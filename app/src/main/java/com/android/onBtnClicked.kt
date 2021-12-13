@@ -1,6 +1,6 @@
 package com.android
 
 interface onBtnClicked {
-    fun setImage(enterText :String)
+    fun setImage(img : Int)
 
 }

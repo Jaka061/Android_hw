@@ -31,13 +31,13 @@ class Fragment1 : Fragment(R.layout.fragment) {
 
 
         btn.setOnClickListener {
-            listener.setImage("img 1")
+            listener.setImage(R.mipmap.ic_launcher)
         }
         btn2.setOnClickListener {
-            listener.setImage("img 2")
+            listener.setImage(R.mipmap.ic_launcher_circle)
         }
         btn3.setOnClickListener {
-            listener?.setImage("img 3")
+            listener?.setImage(R.mipmap.ic_launcher_circle_round)
         }
     }
 

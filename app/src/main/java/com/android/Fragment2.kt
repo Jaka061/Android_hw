@@ -10,15 +10,16 @@ class Fragment2 : Fragment(R.layout.fragment2){
 
     private lateinit var txt : AppCompatTextView
     private lateinit var image1 : AppCompatImageView
+    private lateinit var image2 : AppCompatImageView
+    private lateinit var image3 : AppCompatImageView
 
-    var txt2 = ""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         txt = view.findViewById(R.id.frag2txt)
         image1 = view.findViewById(R.id.img1)
     }
-    fun setText(entText :String){
-        txt.text = entText
+    fun setImage(image : Int){
+        image1.setImageResource(image)
     }
 }

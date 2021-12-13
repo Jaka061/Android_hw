@@ -20,10 +20,9 @@ class MainActivity : AppCompatActivity(), onBtnClicked {
 
 
     }
-    override fun setImage(enterText: String) {
-        val fragm2 = supportFragmentManager.findFragmentById(R.id.frag2) as? Fragment2
-        fragm2?.setText(enterText)
-        text2 = enterText
+    override fun setImage(image : Int) {
+        val fragment2 = supportFragmentManager.findFragmentById(R.id.frag2) as? Fragment2
+        fragment2?.setImage(image)
 
     }
 
