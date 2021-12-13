@@ -7,30 +7,23 @@
     android:background="@android:color/holo_green_light"
     tools:context=".MainActivity">
 
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Авторизация"
-        android:textSize="25sp"
-        android:textColor="@color/white"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAuto"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        app:title="@string/auto"
+        app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editLog"
         />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editLog"
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Login"
-        android:inputType="text"
-        android:layout_margin="20dp"
-        android:padding="15dp"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/txt"
+        style="@style/Edit"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAuto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/editPass"
@@ -40,12 +33,10 @@
         android:id="@+id/editPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:padding="15dp"
-        android:inputType="numberPassword"
-        android:background="@color/white"
-        android:hint="Password"
-        app:layout_constraintTop_toBottomOf="@+id/editLog"
+        style="@style/EditP"
+        android:text=""
+        android:imeOptions="actionDone"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btn"
@@ -53,24 +44,13 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Войти"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPass" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn2"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:text="Регистрация"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        style="@style/btnV"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn"
-        app:layout_constraintTop_toBottomOf="@id/editPass"
-        app:layout_constraintVertical_bias="0.562" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPass" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

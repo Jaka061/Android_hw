@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Android</string>
-    <string name="fragment_1" translatable="false">Fragment 1</string>
-    <string name="send" translatable="false">Send</string>
-    <string name="fragment_2" translatable="false">Fragment 2</string>
-    <string name="edit_text">Edit text</string>
+    <string name="app_name">Authorization</string>
+    <string name="menu">About Me</string>
+    <string name="glavn">Главный экран</string>
+    <string name="auto">Авторизация</string>
+    <string name="password">Password</string>
+    <string name="btn">Войти</string>
+    <string name="edit_text">Email</string>
 </resources>

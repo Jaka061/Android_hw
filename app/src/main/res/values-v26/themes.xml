@@ -2,35 +2,42 @@
 <resources>
 
     <style name="text">
-        <item name="android:text">@string/fragment_1</item>
+        <item name="android:text">@string/auto</item>
         <item name="android:textStyle">bold|italic</item>
         <item name="android:textSize">30sp</item>
-        <item name="android:layout_margin">10dp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
-
-    <style name="text2">
-        <item name="android:text">@string/fragment_2</item>
+    <style name="textGl">
+        <item name="android:text">@string/glavn</item>
         <item name="android:textStyle">bold|italic</item>
         <item name="android:textSize">30sp</item>
-        <item name="android:layout_margin">10dp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="Edit">
         <item name="android:hint">@string/edit_text</item>
+        <item name="android:lines">1</item>
         <item name="android:padding">15dp</item>
-        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:layout_margin">20dp</item>
         <item name="android:background">@drawable/btn</item>
-        <item name="android:inputType">text</item>
     </style>
-    <style name="btnSend">
-        <item name="android:text">@string/send</item>
-        <item name="android:textSize">25sp</item>
+
+    <style name="EditP">
+        <item name="android:hint">@string/password</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:lines">1</item>
+        <item name="android:inputType">numberPassword</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:background">@drawable/btn</item>
+    </style>
+    <style name="btnV">
+        <item name="android:textSize">20sp</item>
+        <item name="android:text">@string/btn</item>
         <item name="android:layout_margin">10dp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@drawable/view</item>
-        <item name="android:paddingHorizontal">25dp</item>
+        <item name="android:paddingHorizontal">20dp</item>
         <item name="android:paddingVertical">15dp</item>
     </style>
 </resources>
