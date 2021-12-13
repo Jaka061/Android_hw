@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 
-//Reg
 class Fragment2 : Fragment(R.layout.fragment_about) {
 
     private lateinit var listener : OnClick

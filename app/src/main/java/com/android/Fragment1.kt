@@ -10,11 +10,12 @@ import androidx.fragment.app.Fragment
 
 class Fragment1 : Fragment(R.layout.fragment) {
 
+    private lateinit var listener : OnClick
     private lateinit var  editEmail : AppCompatEditText
     private lateinit var editPass: AppCompatEditText
     private lateinit var btn : AppCompatButton
-    private lateinit var listener : OnClick
     private var txt = ""
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         listener = context as OnClick
@@ -39,20 +40,6 @@ class Fragment1 : Fragment(R.layout.fragment) {
             } else {
                 Toast.makeText(requireContext(), "Заполните поля !", Toast.LENGTH_LONG).show()
             }
-        }
-    }
-
-
-    override fun onSaveInstanceState (outState : Bundle){
-        super.onSaveInstanceState(outState)
-        outState.putString("email",txt)
-    }
-
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        super.onViewStateRestored(savedInstanceState)
-        if (savedInstanceState != null) {
-            val eml = savedInstanceState.getString("email","")
-            editEmail.setText(eml)
         }
     }
 

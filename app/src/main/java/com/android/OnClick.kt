@@ -4,6 +4,6 @@ interface OnClick {
 
     fun onClickFragGl()
     fun onClickFragMenu()
-    fun onClickFragAuto()
+   // fun onClickFragAuto()
 
 }
