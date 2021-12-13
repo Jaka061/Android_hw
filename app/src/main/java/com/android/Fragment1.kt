@@ -7,24 +7,18 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
-import com.android.databinding.ActivityMainBinding
-import com.android.databinding.FragmentBinding
 
-//avt
 class Fragment1 : Fragment(R.layout.fragment) {
 
     private lateinit var  editEmail : AppCompatEditText
     private lateinit var editPass: AppCompatEditText
     private lateinit var btn : AppCompatButton
-
     private lateinit var listener : OnClick
-
+    private var txt = ""
     override fun onAttach(context: Context) {
         super.onAttach(context)
         listener = context as OnClick
-
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,6 +28,7 @@ class Fragment1 : Fragment(R.layout.fragment) {
 
         val email = "qwerty@gmail.com"
         val pss = "1234"
+        txt = editEmail.text.toString()
         btn.setOnClickListener {
             if (editEmail.text.toString().isNotEmpty() && editPass.text.toString().isNotEmpty()) {
                 if (editEmail.text.toString() == email && editPass.text.toString() == pss) {
@@ -46,17 +41,18 @@ class Fragment1 : Fragment(R.layout.fragment) {
             }
         }
     }
-    var txt = ""
+
+
     override fun onSaveInstanceState (outState : Bundle){
         super.onSaveInstanceState(outState)
-        outState.putString("email",editEmail.text.toString())
+        outState.putString("email",txt)
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         if (savedInstanceState != null) {
-            txt = savedInstanceState.getString("email","")
-            editEmail.setText(txt)
+            val eml = savedInstanceState.getString("email","")
+            editEmail.setText(eml)
         }
     }
 

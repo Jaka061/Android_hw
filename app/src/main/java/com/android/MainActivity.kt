@@ -2,14 +2,6 @@ package com.android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatTextView
-import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
-import com.android.databinding.ActivityMainBinding
-import com.android.databinding.FragmentBinding
 
 class MainActivity : AppCompatActivity(),OnClick {
 
@@ -18,15 +10,8 @@ class MainActivity : AppCompatActivity(),OnClick {
 
         supportFragmentManager.beginTransaction()
             .add(R.id.frag_cont,Fragment1()).commit()
-
-        val toolbar =  findViewById<Toolbar>(R.id.toolbarGlav)
-        setSupportActionBar(toolbar)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
     override fun onClickFragAuto() {
         val fragment1 = Fragment1()
         supportFragmentManager.beginTransaction()
@@ -42,7 +27,7 @@ class MainActivity : AppCompatActivity(),OnClick {
             .addToBackStack(null).commit()
     }
 
-    override fun onClickFragGl() { //glavn
+    override fun onClickFragGl() {
         val fragment3 = Fragment3()
 
         supportFragmentManager.beginTransaction()
