@@ -43,5 +43,4 @@ class Fragment3 : Fragment(R.layout.fragment_glavn) {
             true
         }
     }
-
 }
