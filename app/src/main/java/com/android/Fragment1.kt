@@ -14,7 +14,7 @@ class Fragment1 : Fragment(R.layout.fragment) {
     private lateinit var  editEmail : AppCompatEditText
     private lateinit var editPass: AppCompatEditText
     private lateinit var btn : AppCompatButton
-    private var txt = ""
+    private var txt = "" // не вижу, чтобы это поле где то использовалось
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -31,6 +31,7 @@ class Fragment1 : Fragment(R.layout.fragment) {
         val pss = "1234"
         txt = editEmail.text.toString()
         btn.setOnClickListener {
+            // здесь лучше вынести значения из эдитТекстов в переменные и потом работать с переменными
             if (editEmail.text.toString().isNotEmpty() && editPass.text.toString().isNotEmpty()) {
                 if (editEmail.text.toString() == email && editPass.text.toString() == pss) {
                     listener.onClickFragGl()
