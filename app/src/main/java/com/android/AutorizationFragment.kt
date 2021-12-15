@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
 
-class Autorization : Fragment(R.layout.fragment) {
+class AutorizationFragment : Fragment(R.layout.fragment) {
 
     private lateinit var listener : OnClick
     private lateinit var  editEmail : AppCompatEditText

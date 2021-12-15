@@ -10,18 +10,18 @@ class MainActivity : AppCompatActivity(),OnClick {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.frag_cont,Autorization()).commit()
+            .add(R.id.frag_cont,AutorizationFragment()).commit()
     }
 
     override fun onClickFragMenu() {
-        val fragment2 = AboutMe()
+        val fragment2 = AboutMeFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.frag_cont,fragment2)
             .addToBackStack(null).commit()
     }
 
     override fun onClickFragGl() {
-        val fragment3 = MainMenu()
+        val fragment3 = MenuFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.frag_cont,fragment3).commit()
     }

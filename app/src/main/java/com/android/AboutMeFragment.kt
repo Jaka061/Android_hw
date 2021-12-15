@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
-class AboutMe : Fragment(R.layout.fragment_about) {
+class AboutMeFragment : Fragment(R.layout.fragment_about) {
 
     private lateinit var listener : OnClick
 

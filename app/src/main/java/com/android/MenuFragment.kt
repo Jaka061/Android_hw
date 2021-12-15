@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 
-class MainMenu : Fragment(R.layout.fragment_glavn) {
+class MenuFragment : Fragment(R.layout.fragment_glavn) {
 
      private lateinit var listener : OnClick
 
@@ -29,7 +29,7 @@ class MainMenu : Fragment(R.layout.fragment_glavn) {
             when(it.itemId) {
                 R.id.menu1 -> {
                     requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.frag_cont,AboutMe())
+                        .replace(R.id.frag_cont,AboutMeFragment())
                         .addToBackStack(null).commit()
                 }
             }
