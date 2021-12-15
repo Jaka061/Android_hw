@@ -8,13 +8,12 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
 
-class Fragment1 : Fragment(R.layout.fragment) {
+class Autorization : Fragment(R.layout.fragment) {
 
     private lateinit var listener : OnClick
     private lateinit var  editEmail : AppCompatEditText
     private lateinit var editPass: AppCompatEditText
     private lateinit var btn : AppCompatButton
-    private var txt = ""
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -29,7 +28,6 @@ class Fragment1 : Fragment(R.layout.fragment) {
 
         val email = "qwerty@gmail.com"
         val pss = "1234"
-        txt = editEmail.text.toString()
         btn.setOnClickListener {
             if (editEmail.text.toString().isNotEmpty() && editPass.text.toString().isNotEmpty()) {
                 if (editEmail.text.toString() == email && editPass.text.toString() == pss) {
