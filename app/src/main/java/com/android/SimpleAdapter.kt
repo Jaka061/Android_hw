@@ -1,10 +1,14 @@
 package com.android
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class SimpleAdapter (
     private val click: (pos: Int) -> Unit
@@ -37,10 +41,21 @@ class SimpleAdapter (
 
         fun bind(item: String) {
             val txt = itemView.findViewById<AppCompatTextView>(R.id.item_txt)
+            val image = itemView.findViewById<AppCompatImageView>(R.id.img)
+
+            val url = "https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
+            val url2 = "https://handcraftguide.com/sites/default/files/styles/original___water/public/sketchingforkids1handcraftguide.com__0.jpg?itok=CiUYaUmE"
+            if (adapterPosition % 2 == 0 ) {
+                Glide.with(itemView.context).load(url).into(image)
+            }else{
+                Glide.with(itemView.context).load(url2).into(image)
+            }
+
             txt.text = item
             itemView.setOnClickListener {
                 click.invoke(adapterPosition)
             }
         }
     }
+
 }
