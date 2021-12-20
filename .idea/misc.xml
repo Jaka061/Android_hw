@@ -8,12 +8,16 @@
         <entry key="..\:/Files/Android/app/src/main/res/drawable/bkgr.xml" value="0.1921875" />
         <entry key="..\:/Files/Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1921875" />
         <entry key="..\:/Files/Android/app/src/main/res/drawable/ic_launcher_circle_background.xml" value="0.34933605720122574" />
+        <entry key="..\:/Files/Android/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.253125" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout/activity_main.xml" value="0.2328125" />
+        <entry key="..\:/Files/Android/app/src/main/res/layout/activity_main2.xml" value="0.2557291666666667" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/fragment.xml" value="0.329417773237998" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/fragment_about.xml" value="0.2" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/fragment_glavn.xml" value="0.329417773237998" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/recycle.xml" value="0.33" />
         <entry key="..\:/Files/Android/app/src/main/res/layout/recycler.xml" value="0.5" />
         <entry key="..\:/Files/Android/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Files/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.253125" />
         <entry key="..\:/Files/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1921875" />
       </map>
     </option>
