@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 
 class MenuFragment : Fragment(R.layout.fragment_glavn) {
 
-     private lateinit var listener : OnClick
+    private lateinit var listener : OnClick
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

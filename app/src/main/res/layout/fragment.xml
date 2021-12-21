@@ -22,20 +22,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Edit"
-        android:text=""
-
         app:layout_constraintTop_toBottomOf="@+id/toolbarAuto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/editPass"
         />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/EditP"
         android:text=""
+        app:errorEnabled="true"
         android:imeOptions="actionDone"
         app:layout_constraintTop_toBottomOf="@+id/editEmail"
         app:layout_constraintEnd_toEndOf="parent"

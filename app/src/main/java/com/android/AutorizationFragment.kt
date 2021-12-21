@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 
 class AutorizationFragment : Fragment(R.layout.fragment) {
 
+
     private lateinit var listener : OnClick
     private lateinit var  editEmail : AppCompatEditText
     private lateinit var editPass: AppCompatEditText
