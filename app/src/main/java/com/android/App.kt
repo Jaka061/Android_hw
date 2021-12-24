@@ -8,15 +8,15 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        _instance = this
+        instance1 = this
         preferences = PreferencesImp(this)
     }
 
     companion object{
-        private var _instance : App? = null
-        val instance get() = _instance!!
+        private var instance1 : App? = null
+        val instance get() = instance1!!
     }
 }
 
-val Any.Injector: App
+val Injector: App
     get() = App.instance
