@@ -6,13 +6,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
-import com.android.databinding.FragmentBinding
+import com.android.databinding.Fragment2Binding
 
 class FragRegistration : Fragment(R.layout.fragment2) {
-    private var binding1 : FragmentBinding? = null
+    private var binding1 : Fragment2Binding? = null
     private val binding get() = binding1!!
     private lateinit var listener : OnClick
     private val pref get() = Injector.preferences
@@ -24,7 +22,7 @@ class FragRegistration : Fragment(R.layout.fragment2) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding1 = FragmentBinding.bind(view)
+        binding1 = Fragment2Binding.bind(view)
 
         binding.apply {
             editLog.addTextChangedListener(textWatcher)
