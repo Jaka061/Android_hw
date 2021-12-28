@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        recycler.layoutManager = layoutManager
+        recycler.layoutManager = GridLayoutManager(this,2)
         recycler.adapter = adapter
         recycler.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
 

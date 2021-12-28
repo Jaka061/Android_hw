@@ -44,7 +44,7 @@ class SimpleAdapter (
             val image = itemView.findViewById<AppCompatImageView>(R.id.img)
 
             val url = "https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"
-            val url2 = "https://handcraftguide.com/sites/default/files/styles/original___water/public/sketchingforkids1handcraftguide.com__0.jpg?itok=CiUYaUmE"
+            val url2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfLjvJPiDLSI0kLBSdw2Zw3A71najuxfyqMqaCPECIOJeVgLDF_zMSyZgJH3QQMtqzSFc&usqp=CAU"
             if (adapterPosition % 2 == 0 ) {
                 Glide.with(itemView.context).load(url).into(image)
             }else{

@@ -15,7 +15,8 @@
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/item_txt"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/item_txt"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:layout_marginEnd="10dp"
         android:text="THIS ITEM"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
