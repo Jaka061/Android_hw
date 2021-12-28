@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light"
+    android:background="@android:color/holo_blue_bright"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -21,26 +22,54 @@
         android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Edit"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginHorizontal="20dp"
+        app:helperText=""
+        app:helperTextTextColor="@android:color/holo_red_light"
+        app:startIconDrawable="@drawable/ic_launcher_foreground"
+        app:endIconMode="clear_text"
+        android:hint="@string/email"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
         app:layout_constraintTop_toBottomOf="@+id/toolbarAuto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/editPass"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/editPass">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="textEmailAddress"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/EditP"
-        android:text=""
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/password"
+        android:layout_marginHorizontal="20dp"
+        app:helperText=""
+        app:helperTextTextColor="@android:color/holo_red_light"
+        app:endIconMode="password_toggle"
         app:errorEnabled="true"
-        android:imeOptions="actionDone"
         app:layout_constraintTop_toBottomOf="@+id/editEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btn">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn"
@@ -51,6 +80,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPass" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

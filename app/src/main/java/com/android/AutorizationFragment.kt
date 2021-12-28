@@ -4,17 +4,16 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import com.android.databinding.FragmentBinding
 
 class AutorizationFragment : Fragment(R.layout.fragment) {
 
-
     private lateinit var listener : OnClick
-    private lateinit var  editEmail : AppCompatEditText
-    private lateinit var editPass: AppCompatEditText
-    private lateinit var btn : AppCompatButton
+    private var binding1 : FragmentBinding? = null
+    private val binding get() = binding1!!
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -23,21 +22,38 @@ class AutorizationFragment : Fragment(R.layout.fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        editEmail = view.findViewById(R.id.editEmail)
-        editPass = view.findViewById(R.id.editPass)
-        btn = view.findViewById(R.id.btn)
+        binding1 = FragmentBinding.bind(view)
 
         val email = "qwerty@gmail.com"
         val pss = "1234"
-        btn.setOnClickListener {
-            if (editEmail.text.toString().isNotEmpty() && editPass.text.toString().isNotEmpty()) {
-                if (editEmail.text.toString() == email && editPass.text.toString() == pss) {
-                    listener.onClickFragGl()
-                } else if (editEmail.text.toString() != email || editPass.text.toString() != email) {
-                    Toast.makeText(context, "Такого пользователя нет !", Toast.LENGTH_LONG).show()
+
+        binding.apply {
+            editE.doOnTextChanged { text, _, _, _ ->
+                if (text!!.length > 20) {
+                    editE.error = "More than 20 characters!"
+                } else if (text.length < 10) {
+                    editE.error = null
                 }
-            } else {
-                Toast.makeText(requireContext(), "Заполните поля !", Toast.LENGTH_LONG).show()
+            }
+            btn.setOnClickListener {
+                if (editE.text.toString().isNotEmpty() && editP.text.toString().isNotEmpty()) {
+                    if (binding.editE.text.toString() == email && editP.text.toString() == pss) {
+                        listener.onClickFragGl()
+                    }else{
+                        editEmail.error = "Wrong login or password!"
+                        editPass.error = "Wrong login or password!"
+                    }
+                } else if (editE.text.toString().isEmpty() && editP.text.toString().isNotEmpty()) {
+                    editEmail.error = "Email must not be empty !"
+                    editPass.error = null
+                } else if (editE.text.toString().isNotEmpty() && editP.text.toString().isEmpty()){
+                    editEmail.error = null
+                    editPass.error = " Password must not be empty !"
+                }
+                else{
+                    editEmail.error = "* * *"
+                    editPass.error = "* * *"
+                }
             }
         }
     }
