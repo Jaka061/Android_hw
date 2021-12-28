@@ -57,5 +57,9 @@ class AutorizationFragment : Fragment(R.layout.fragment) {
             }
         }
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding1 = null
+    }
 
 }
