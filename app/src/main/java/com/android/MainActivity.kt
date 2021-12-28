@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity(),OnClick {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(pref.getLogin("login").isNullOrEmpty() && pref.getPassword("password").isNullOrEmpty()){
+        if(pref.getLogin("login").isEmpty() && pref.getPassword("password").isEmpty()){
             supportFragmentManager.beginTransaction()
                 .add(R.id.frag_cont, FragRegistration()).commit()
         }
@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity(),OnClick {
         }
 
     }
-
     override fun goToAutorization() {
         val fragment1 = FragAutorization()
         supportFragmentManager.beginTransaction()
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity(),OnClick {
     override fun goToRegistr() {
         val fragment2 = FragRegistration()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.frag_cont,fragment2).commit()
+        .replace(R.id.frag_cont,fragment2).commit()
     }
 
     override fun goToMenu(login: String) {
