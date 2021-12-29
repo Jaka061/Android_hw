@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <item android:id="@+id/menu1"
-        android:title="О себе"/>
-
+    <group
+        android:id="@+id/group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item1"
+            android:checked="true"
+            android:title="fragment 1" />
+        <item
+            android:id="@+id/item2"
+            android:checked="true"
+            android:title="fragment 2" />
+        <item
+            android:id="@+id/item3"
+            android:checked="true"
+            android:title="fragment 3" />
+    </group>
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/item4"
+            android:checked="true"
+            android:title="fragment 4" />
+    </group>
 </menu>
