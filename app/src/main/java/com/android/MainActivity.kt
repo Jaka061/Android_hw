@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                    btn.setOnClickListener {
                        val words = edit.text.toString().trim()
-                       val count = Regex("\\w+").findAll(words.trim()).count()    // можно кнопку в целом не использовать
+                       val count = Regex("ая\\b").findAll(words.trim()).count()
                        txt.text = "$count"
                    }
                 }
