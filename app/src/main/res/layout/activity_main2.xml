@@ -4,30 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light"
-    tools:context=".MainActivity">
+    android:background="@android:color/holo_blue_bright"
+    tools:context=".MainActivity2">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/btn"
+        android:hint="Edit text"
+        android:textColorHint="@color/black"
+        android:background="@color/white"
+        android:layout_marginHorizontal="25dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn"
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go"
+        android:text="Back"
         android:textSize="20dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt" />
-
+       />
 </androidx.constraintlayout.widget.ConstraintLayout>
