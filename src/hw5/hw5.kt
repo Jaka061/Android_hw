@@ -34,7 +34,6 @@ import java.util.*
 * < Not found
 * < masha = 702398907
 */
-
 fun main() {
     println("Введите число записей :")
     val x = readLine()!!.toInt()
@@ -65,8 +64,3 @@ fun main() {
     }while (exit != "exit")
     a.close()
 }
-private fun String.parseToInt():Int{
-    if(this == "") return 0
-    return this.toInt()
-}
-
