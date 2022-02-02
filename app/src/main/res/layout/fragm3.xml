@@ -5,19 +5,6 @@
     android:background="@android:color/holo_blue_dark"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMenu"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_500"
-        app:title="@string/menu"
-        app:titleTextColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/icon"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        />
-
    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
