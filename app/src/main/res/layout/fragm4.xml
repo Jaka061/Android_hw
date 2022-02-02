@@ -2,34 +2,29 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:background="@android:color/holo_blue_light"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMenu"
+        android:id="@+id/toolbarGlav"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_500"
-        app:title="@string/menu"
+        app:title="@string/glavn"
         app:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/icon"
-        app:navigationIcon="?attr/homeAsUpIndicator"
         />
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/menu"
-        android:textSize="35sp"
-        android:textColor="@color/white"
+        style="@style/textFr4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

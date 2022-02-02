@@ -3,11 +3,12 @@ package com.android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(),OnClick {
+class MainActivity : AppCompatActivity(){
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var drawerToggle: ActionBarDrawerToggle
 
@@ -21,20 +22,29 @@ class MainActivity : AppCompatActivity(),OnClick {
         val menu = findViewById<NavigationView>(R.id.menu)
 
         drawerLayout = findViewById(R.id.drawerLayout)
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frag_cont,AutorizationFragment()).commit()
-    }
+        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
 
-    override fun onClickFragMenu() {
-        val fragment2 = AboutMeFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frag_cont,fragment2)
-            .addToBackStack(null).commit()
-    }
+        drawerLayout.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
 
-    override fun onClickFragGl() {
-        val fragment3 = MenuFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.frag_cont,fragment3).commit()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        toolbar.setNavigationOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
+        menu.setNavigationItemSelectedListener { menuItem ->
+            menuItem.isChecked = true
+            drawerLayout.closeDrawer(GravityCompat.START)
+            val fragm = when(menuItem.itemId){
+                R.id.item1 -> Fragment1()
+                R.id.item2 -> Fragment2()
+                R.id.item3 -> Fragment3()
+                else -> Fragment4()
+            }
+            supportFragmentManager.beginTransaction().replace(R.id.fragm_cont, fragm).commit()
+            drawerLayout.closeDrawer(GravityCompat.START)
+            true
+        }
     }
 }

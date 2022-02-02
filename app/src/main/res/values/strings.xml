@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Hw 31</string>
-    <string name="menu">About Me</string>
-    <string name="glavn">Главный экран</string>
-    <string name="auto">Авторизация</string>
-    <string name="password">Password</string>
-    <string name="btn">Войти</string>
-    <string name="edit_text">Email</string>
+    <string name="menu">Fragment 3</string>
+    <string name="glavn">Fragment 1</string>
+    <string name="auto">Fragment 2</string>
+    <string name="fr4">Fragment 4</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
