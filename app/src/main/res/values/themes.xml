@@ -14,10 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Edit">
-        <item name="android:padding">15dp</item>
-        <item name="android:layout_margin">20dp</item>
-        <item name="android:background">@color/white</item>
-        <item name="android:inputType">text</item>
-    </style>
 </resources>

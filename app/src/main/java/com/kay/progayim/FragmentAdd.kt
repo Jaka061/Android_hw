@@ -5,14 +5,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.kay.progayim.database.Employee
-import com.kay.progayim.databinding.FragmEditBinding
+import com.kay.progayim.databinding.FragmAddBinding
 
-class FragmentEdit : Fragment(R.layout.fragm_edit) {
-    private var binding1 : FragmEditBinding? = null
+class FragmentAdd : Fragment(R.layout.fragm_add) {
+    private var binding1 : FragmAddBinding? = null
     private val binding get() = binding1!!
 
-    private val dbInstance get() = Injector.database
     private lateinit var listener : OnBtnClicked
+    private val dbInstance get() = Injector.database
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -21,7 +21,7 @@ class FragmentEdit : Fragment(R.layout.fragm_edit) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view,savedInstanceState)
-        binding1 = FragmEditBinding.bind(view)
+        binding1 = FragmAddBinding.bind(view)
 
         binding.apply {
             btn.setOnClickListener {
@@ -31,7 +31,7 @@ class FragmentEdit : Fragment(R.layout.fragm_edit) {
                         company = empComp.text.toString(),
                         salary = empSalary.text.toString().toInt()
                     )
-                    dbInstance.employeeDao().update(e)
+                    dbInstance.employeeDao().insert(e)
                     listener.goBack()
                 }
             }

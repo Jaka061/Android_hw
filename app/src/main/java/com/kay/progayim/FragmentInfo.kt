@@ -4,10 +4,10 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.kay.progayim.databinding.FragmDbBinding
+import com.kay.progayim.databinding.FragmInfoBinding
 
-class FragmentDB : Fragment(R.layout.fragm_db) {
-    private var binding1 : FragmDbBinding? = null
+class FragmentInfo : Fragment(R.layout.fragm_info) {
+    private var binding1 : FragmInfoBinding? = null
     private val binding get() = binding1!!
 
     private lateinit var listener : OnBtnClicked
@@ -20,13 +20,17 @@ class FragmentDB : Fragment(R.layout.fragm_db) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view,savedInstanceState)
-        binding1 = FragmDbBinding.bind(view)
+        binding1 = FragmInfoBinding.bind(view)
 
         binding.apply {
             val e = dbInstance.employeeDao().getLast()
             dbName.text = e.name
             dbComp.text = e.company
             dbSalary.text = e.salary.toString()
+
+            btn.setOnClickListener {
+                listener.goBack()
+            }
         }
     }
 
