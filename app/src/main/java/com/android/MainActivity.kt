@@ -20,23 +20,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
               btn.setOnClickListener {
-                  val listA = edit.text.toString().trim().split("\\s+".toRegex())
+                  val words = edit.text.toString().trim()
+                  val count3 = words.split("\\b[A-Za-z][A-Za-z][A-Za-z]\\b".toRegex()).size - 1
+                  val countKotlin = words.split("\\wKotlin\\w".toRegex()).size - 1    // я не поняла должно быть "kotlin" или например "gkotlina"
+                  txt.text = "$count3"                                                  // , если "kotlin" то //w можно убрать
+                  txtKotlin.text = "$countKotlin"
 
-                  listA.forEach {
-                      if(it.contains("a")){
-                          numA = it.count { wrd -> wrd == 'a' }
-                          if(countMax < numA){
-                              countMax = numA
-                              wrdMax = it
-                          }
-                      }
-                  }
-                  txt.text = wrdMax + "- $countMax"
               }
         }
 
     }
 }
-
-// работает , но если стереть некоторые записи результат не меняется .
-// Учитывает  только новые записи не смогла этот момент доработать (
