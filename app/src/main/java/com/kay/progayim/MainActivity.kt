@@ -17,8 +17,11 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
             .commit()
     }
 
-    override fun goToInfo() {
+    override fun goToInfo(id : Long) {
         val fragment = FragmentInfo()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragm_cont,fragment)
             .addToBackStack(null).commit()
@@ -31,17 +34,14 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
             .addToBackStack(null).commit()
     }
 
-    override fun goTOEdit() {
+    override fun goTOEdit(id: Long) {
         val fragment = FragmentEdit()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragm_cont,fragment)
-            .addToBackStack(null).commit()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+            fragment.arguments = bundle
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragm_cont, fragment)
+                .addToBackStack(null).commit()
     }
 
-    override fun goBack() {
-        val fragment = FragmentMain()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragm_cont,fragment)
-            .commit()
-    }
 }

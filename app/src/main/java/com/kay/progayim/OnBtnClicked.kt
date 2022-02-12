@@ -1,9 +1,9 @@
 package com.kay.progayim
 
 interface OnBtnClicked {
-    fun goBack()
-    fun goToInfo()
+    //fun goBack()
+    fun goToInfo(id : Long)
     fun goToAdd()
-    fun goTOEdit()
+    fun goTOEdit(id: Long)
 
 }

@@ -23,24 +23,37 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding1 = FragmMainBinding.bind(view)
 
-        val recycler = view.findViewById<RecyclerView>(R.id.recycler)
         val layoutManager = LinearLayoutManager(activity)
-
-        val adapter = EmpAdapter(requireContext()) {
-            val emp = dbInstance.employeeDao().getById(id)
-            dbInstance.employeeDao().delete(emp)
+        val adapter = EmpAdapter(
+            click = {
+                listener.goToInfo(it)
+            },
+            del = {
+                val emp = dbInstance.employeeDao().getById(it)
+                dbInstance.employeeDao().delete(emp)
+            }
+        )
+        {
+            listener.goTOEdit(it)
         }
 
-        recycler.layoutManager = layoutManager
-        recycler.adapter = adapter
-        recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
+        binding.apply {
+            recycler.layoutManager = layoutManager
+            recycler.adapter = adapter
+            recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
-        val list = mutableListOf<String>()
-        for (i in 0..20) {
-            list.add("ITEM -$i")
+            btnAdd.setOnClickListener{
+                listener.goToAdd()
+            }
         }
-       // adapter.setData(list)
+        val empList = dbInstance.employeeDao().getAll()
+        adapter.setData(empList)
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding1 = null
     }
 }

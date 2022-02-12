@@ -23,13 +23,14 @@ class FragmentInfo : Fragment(R.layout.fragm_info) {
         binding1 = FragmInfoBinding.bind(view)
 
         binding.apply {
-            val e = dbInstance.employeeDao().getLast()
+            val id = arguments?.getLong("id")!!
+            val e = dbInstance.employeeDao().getById(id)
             dbName.text = e.name
             dbComp.text = e.company
             dbSalary.text = e.salary.toString()
 
             btn.setOnClickListener {
-                listener.goBack()
+               requireActivity().onBackPressed()
             }
         }
     }

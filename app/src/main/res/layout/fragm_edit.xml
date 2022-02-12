@@ -53,11 +53,11 @@
         app:layout_constraintTop_toBottomOf="@+id/empComp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn"
+        app:layout_constraintBottom_toTopOf="@+id/btnEdit"
         />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn"
+        android:id="@+id/btnEdit"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Edit"

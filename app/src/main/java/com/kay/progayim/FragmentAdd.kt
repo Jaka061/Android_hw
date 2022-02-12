@@ -25,14 +25,14 @@ class FragmentAdd : Fragment(R.layout.fragm_add) {
 
         binding.apply {
             btn.setOnClickListener {
-                if (empName.text.isNullOrEmpty() && empComp.text.isNullOrEmpty() && empSalary.text.toString().isNotEmpty()  ) {
+                if (empName.text.toString().isNotEmpty() && empComp.text.toString().isNotEmpty() && empSalary.text.toString().isNotEmpty()  ) {
                     val e = Employee(
                         name = empName.text.toString(),
                         company = empComp.text.toString(),
                         salary = empSalary.text.toString().toInt()
                     )
                     dbInstance.employeeDao().insert(e)
-                    listener.goBack()
+                        requireActivity().onBackPressed()
                 }
             }
         }

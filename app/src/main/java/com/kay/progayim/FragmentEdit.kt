@@ -4,13 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.kay.progayim.database.Employee
 import com.kay.progayim.databinding.FragmEditBinding
 
 class FragmentEdit : Fragment(R.layout.fragm_edit) {
     private var binding1 : FragmEditBinding? = null
     private val binding get() = binding1!!
-
     private val dbInstance get() = Injector.database
     private lateinit var listener : OnBtnClicked
 
@@ -24,15 +22,16 @@ class FragmentEdit : Fragment(R.layout.fragm_edit) {
         binding1 = FragmEditBinding.bind(view)
 
         binding.apply {
-            btn.setOnClickListener {
-                if (empName.text.isNullOrEmpty() && empComp.text.isNullOrEmpty() && empSalary.text.toString().isNotEmpty()  ) {
-                    val e = Employee(
-                        name = empName.text.toString(),
-                        company = empComp.text.toString(),
-                        salary = empSalary.text.toString().toInt()
-                    )
+            btnEdit.setOnClickListener {
+                val id = arguments?.getLong("id")!!
+                val e = dbInstance.employeeDao().getById(id)
+                if (empName.text.toString().isNotEmpty() && empComp.text.toString().isNotEmpty() && empSalary.text.toString().isNotEmpty()  ) {
+                    e.name = empName.text.toString()
+                    e.company = empComp.text.toString()
+                    e.salary = empSalary.text.toString().toInt()
+
                     dbInstance.employeeDao().update(e)
-                    listener.goBack()
+                    requireActivity().onBackPressed()
                 }
             }
         }
