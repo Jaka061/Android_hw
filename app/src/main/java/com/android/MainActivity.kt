@@ -21,10 +21,8 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
               btn.setOnClickListener {
                   val words = edit.text.toString().trim()
-                  val count3 = words.split("\\b[A-Za-z][A-Za-z][A-Za-z]\\b".toRegex()).size - 1
-                  val countKotlin = words.split("\\wKotlin\\w".toRegex()).size - 1    // я не поняла должно быть "kotlin" или например "gkotlina"
-                  txt.text = "$count3"                                                  // , если "kotlin" то //w можно убрать
-                  txtKotlin.text = "$countKotlin"
+                  val count3 = "[[:punct:]]".toRegex()
+                  txt.text = "$count3"
 
               }
         }
