@@ -20,10 +20,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
               btn.setOnClickListener {
-                  val words = edit.text.toString().trim()
-                  val count3 = "[[:punct:]]".toRegex()
-                  txt.text = "$count3"
+                  val words = edit.text.toString().trim().replace("\\s+".toRegex(), "_")
+                  val punct = "[^[:word:]]".toRegex()
+                  val countP = punct.replace(words,"*")
+                  val fin = countP.replace("_"," ")
 
+
+                  txt.text = countP.count { "*".contains(it) }.toString()
+                  txtKotlin.text = fin
               }
         }
 
