@@ -34,7 +34,9 @@ class MainActivity : AppCompatActivity() {
                   var numTxt = ""
                   if (num != null) {
                       for (i in num){
-                          numTxt += " " + map[i.toString()]
+                          if(map[i.toString()] != null) {
+                              numTxt += " " + map[i.toString()]
+                          }
                       }
                   }
                   txt.text = numTxt
