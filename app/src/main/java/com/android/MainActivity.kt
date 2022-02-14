@@ -20,16 +20,25 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
               btn.setOnClickListener {
-                  val words = edit.text.toString().trim().replace("\\s+".toRegex(), "_")
-                  val punct = "[^[:word:]]".toRegex()
-                  val countP = punct.replace(words,"*")
-                  val fin = countP.replace("_"," ")
+                  var num = edit.text?.replace("\\s+".toRegex(), "")
+                  val lng = edit.text?.length.toString()
 
+                  val map = mutableMapOf("0" to "ноль","1" to "один","2" to "два", "3" to "три")
+                  map["4"] = "четыре"
+                  map["5"] = "пять"
+                  map["6"] = "шесть"
+                  map["7"] = "семь"
+                  map["8"] = "восемь"
+                  map["9"] = "девять"
 
-                  txt.text = countP.count { "*".contains(it) }.toString()
-                  txtKotlin.text = fin
+                  var numTxt = ""
+                  if (num != null) {
+                      for (i in num){
+                          numTxt += " " + map[i.toString()]
+                      }
+                  }
+                  txt.text = numTxt
               }
         }
-
     }
 }
