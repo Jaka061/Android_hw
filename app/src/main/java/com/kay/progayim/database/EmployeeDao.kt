@@ -1,29 +1,28 @@
 package com.kay.progayim.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import io.reactivex.Completable
+import io.reactivex.Observable
+import io.reactivex.Single
 
 @Dao
 interface EmployeeDao {
 
     @Query("SELECT * FROM employee")
-    fun getAll(): List<Employee>
+    fun getAll():Observable<List<Employee>>
 
     @Query("SELECT * FROM employee WHERE id = :id")
-    fun getById(id: Long): Employee
+    fun getById(id: Long): Single<Employee>
 
-    @Query("SELECT * FROM employee ORDER BY id DESC LIMIT 1")
-    fun getLast(): Employee
+//    @Query("SELECT * FROM employee ORDER BY id DESC LIMIT 1")
+//    fun getLast(): Employee
 
     @Insert
-    fun insert(employee: Employee)
+    fun insert(employee: Employee) :Completable
 
     @Update
-    fun update(employee: Employee)
+    fun update(employee: Employee):Completable
 
     @Delete
-    fun delete(employee: Employee)
+    fun delete(employee: Employee) : Completable
 }

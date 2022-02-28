@@ -1,11 +1,15 @@
 package com.kay.progayim
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.kay.progayim.database.Employee
 import com.kay.progayim.databinding.FragmAddBinding
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class FragmentAdd : Fragment(R.layout.fragm_add) {
     private var binding1 : FragmAddBinding? = null
@@ -32,7 +36,16 @@ class FragmentAdd : Fragment(R.layout.fragm_add) {
                         salary = empSalary.text.toString().toInt()
                     )
                     dbInstance.employeeDao().insert(e)
-                        requireActivity().onBackPressed()
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .doOnComplete {
+                            Log.e("TAG", "AddFragment doOnComplete ${Thread.currentThread().name}")
+                            requireActivity().onBackPressed()
+                        }
+                        .doOnError {
+                            Log.e("TAG", "AddFragment doOnError ${Thread.currentThread().name}")
+                        }
+                        .subscribe()
                 }
             }
         }

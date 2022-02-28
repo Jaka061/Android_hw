@@ -1,6 +1,5 @@
 package com.kay.progayim
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,7 +44,6 @@ class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Lo
             name.text = emp.name
 
             itemView.setOnClickListener {
-                Log.e("TAG00", "click id= ${emp.id}")
                 click.invoke(emp.id!!)
             }
             update.setOnClickListener {

@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.kay.progayim.databinding.FragmInfoBinding
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class FragmentInfo : Fragment(R.layout.fragm_info) {
     private var binding1 : FragmInfoBinding? = null
@@ -24,10 +26,15 @@ class FragmentInfo : Fragment(R.layout.fragm_info) {
 
         binding.apply {
             val id = arguments?.getLong("id")!!
-            val e = dbInstance.employeeDao().getById(id)
-            dbName.text = e.name
-            dbComp.text = e.company
-            dbSalary.text = e.salary.toString()
+            dbInstance.employeeDao().getById(id)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnSuccess {
+                    dbName.text = it.name
+                    dbComp.text = it.company
+                    dbSalary.text = it.salary.toString()
+                }
+                .subscribe()
 
             btn.setOnClickListener {
                requireActivity().onBackPressed()

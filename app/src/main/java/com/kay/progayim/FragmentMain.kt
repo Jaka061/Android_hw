@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kay.progayim.databinding.FragmMainBinding
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class FragmentMain : Fragment(R.layout.fragm_main) {
     private var binding1 : FragmMainBinding? = null
@@ -31,8 +33,13 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
                 listener.goToInfo(it)
             },
             del = {
-                val emp = dbInstance.employeeDao().getById(it)
-                dbInstance.employeeDao().delete(emp)
+                dbInstance.employeeDao().getById(it)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .doOnSuccess() {
+                        dbInstance.employeeDao().delete(it)
+                    }
+                    .subscribe()
             }
         )
         {
@@ -49,7 +56,12 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             }
         }
         val empList = dbInstance.employeeDao().getAll()
-        adapter.setData(empList)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                adapter.setData(it)
+            }
+
     }
 
     override fun onDestroyView() {
