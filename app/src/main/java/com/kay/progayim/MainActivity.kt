@@ -27,21 +27,21 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
             .addToBackStack(null).commit()
     }
 
-    override fun goToAdd() {
-        val fragment = FragmentAdd()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragm_cont,fragment)
-            .addToBackStack(null).commit()
-    }
-
-    override fun goTOEdit(id: Long) {
-        val fragment = FragmentEdit()
-        val bundle = Bundle()
-        bundle.putLong("id", id)
-            fragment.arguments = bundle
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragm_cont, fragment)
-                .addToBackStack(null).commit()
-    }
+//    override fun goToAdd() {
+//        val fragment = FragmentAdd()
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragm_cont,fragment)
+//            .addToBackStack(null).commit()
+//    }
+//
+//    override fun goTOEdit(id: Long) {
+//        val fragment = FragmentEdit()
+//        val bundle = Bundle()
+//        bundle.putLong("id", id)
+//            fragment.arguments = bundle
+//            supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragm_cont, fragment)
+//                .addToBackStack(null).commit()
+//    }
 
 }

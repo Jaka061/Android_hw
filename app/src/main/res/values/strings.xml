@@ -1,6 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ProgAyimApp</string>
-    <string name="salary">Salary</string>
-    <string name="company">Company</string>
-    <string name="name">Name</string>
+    <string name="airdate">airDate</string>
+    <string name="episode">episode</string>
+    <string name="title">Title</string>
+    <string name="season">Season</string>
+    <string name="characters">characters</string>
+    <string name="series">series</string>
+
+
 </resources>

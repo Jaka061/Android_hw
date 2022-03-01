@@ -7,53 +7,67 @@
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dbName"
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name"
+        android:text="@string/title"
         android:textColor="@color/white"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@id/dbComp"
+        app:layout_constraintBottom_toTopOf="@id/season"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dbComp"
+        android:id="@+id/season"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/company"
+        android:text="@string/season"
         android:textSize="28sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/dbName"
+        app:layout_constraintTop_toBottomOf="@id/Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/dbSalary"
+        app:layout_constraintBottom_toTopOf="@id/airDate"
         />
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dbSalary"
+        android:id="@+id/airDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/salary"
+        android:text="@string/airdate"
         android:textSize="28sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/dbComp"
+        app:layout_constraintTop_toBottomOf="@id/season"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btn"
+        app:layout_constraintBottom_toTopOf="@id/episode"
         />
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Back"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dbSalary" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/episode"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/airDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/series"
+        />
+      <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/series"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/series"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/episode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
