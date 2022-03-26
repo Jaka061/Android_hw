@@ -8,13 +8,13 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
-import com.kay.progayim.database.Employee
+import com.kay.progayim.database.User
 
 class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Long) -> Unit,private val upd: (id: Long) -> Unit) : RecyclerView.Adapter<EmpAdapter.ViewHolder>(){
 
-    private var list = mutableListOf<Employee>()
-    fun setData(list: List<Employee>) {
-        this.list = list as MutableList<Employee>
+    private var list = mutableListOf<User>()
+    fun setData(list: List<User>) {
+        this.list = list as MutableList<User>
         notifyDataSetChanged()
     }
 
@@ -35,7 +35,7 @@ class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Lo
     inner class ViewHolder(itemView: View, private val click: (id: Long) -> Unit,private val del: (id: Long) -> Unit,private val upd: (id: Long) -> Unit ) :
         RecyclerView.ViewHolder(itemView) {
 
-        fun bind(emp: Employee,position: Int) {
+        fun bind(emp: User, position: Int) {
             val id = itemView.findViewById<AppCompatTextView>(R.id.dbId)
             val name = itemView.findViewById<AppCompatTextView>(R.id.dbName)
             val update = itemView.findViewById<AppCompatButton>(R.id.btnUpdate)

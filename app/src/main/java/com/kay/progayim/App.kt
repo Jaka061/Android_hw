@@ -23,5 +23,5 @@ class App : Application() {
     }
 }
 
-val Any.Injector: App
+val Injector: App
     get() = App.instance

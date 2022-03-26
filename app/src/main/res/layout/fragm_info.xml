@@ -7,52 +7,79 @@
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dbName"
+        android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name"
         android:textColor="@color/white"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@id/dbComp"
+        app:layout_constraintBottom_toTopOf="@id/lastname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dbComp"
+        android:id="@+id/lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/company"
+        android:text="@string/lastname"
         android:textSize="28sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/dbName"
+        app:layout_constraintTop_toBottomOf="@id/Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/dbSalary"
+        app:layout_constraintBottom_toTopOf="@id/age"
         />
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dbSalary"
+        android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/salary"
+        android:text="@string/age"
         android:textSize="28sp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/dbComp"
+        app:layout_constraintTop_toBottomOf="@id/lastname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gender"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/passwd"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/passwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/gender"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btn"
         />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Back"
-        android:background="@color/white"
+        android:background="@drawable/btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dbSalary" />
+        app:layout_constraintTop_toBottomOf="@+id/passwd" />
 
 
 

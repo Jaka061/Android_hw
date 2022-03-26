@@ -4,10 +4,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Employee(
+data class User(
     @PrimaryKey(autoGenerate = true)
     val id: Long? = null,
     var name: String,
-    var company: String,
-    var salary: Int
+    var lastname: String,
+    var age: Int,
+    var gender : String,
+    var passwd : String
 )

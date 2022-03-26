@@ -9,48 +9,73 @@
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
-        android:textSize="30sp"
+        android:text="Registration"
         android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/empName"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/empName"
+        android:id="@+id/name"
+        style="@style/Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
-        style="@style/Edit"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/empComp"
+        app:layout_constraintBottom_toTopOf="@+id/lastname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/empComp"
+        android:id="@+id/lastname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         style="@style/Edit"
-        android:hint="@string/company"
-        app:layout_constraintTop_toBottomOf="@+id/empName"
+        android:hint="@string/lastname"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/empSalary"
+        app:layout_constraintBottom_toTopOf="@+id/age"
         />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/empSalary"
+        android:id="@+id/age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Edit"
         android:inputType="number"
-        android:hint="@string/salary"
-        app:layout_constraintTop_toBottomOf="@+id/empComp"
+        android:hint="@string/age"
+        app:layout_constraintTop_toBottomOf="@+id/lastname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/gender"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Edit"
+        android:inputType="text"
+        android:hint="@string/gender"
+        app:layout_constraintTop_toBottomOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/passwd"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Edit"
+        android:inputType="text"
+        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@+id/gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btn"
@@ -60,11 +85,11 @@
         android:id="@+id/btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="Add"
+        android:text="Next"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/empSalary" />
+        app:layout_constraintTop_toBottomOf="@+id/passwd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

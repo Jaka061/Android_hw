@@ -13,22 +13,35 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragm_cont, FragmentMain())
+            .add(R.id.fragm_cont, FragmentAutor())
             .commit()
     }
 
-    override fun goToInfo(id : Long) {
-        val fragment = FragmentInfo()
-        val bundle = Bundle()
-        bundle.putLong("id", id)
-        fragment.arguments = bundle
+    override fun goToAdd() {
+        val fragment = FragmentAdd()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragm_cont,fragment)
             .addToBackStack(null).commit()
     }
 
-    override fun goToAdd() {
-        val fragment = FragmentAdd()
+    override fun goMain() {
+        val fragment = FragmentMain()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragm_cont,fragment)
+            .addToBackStack(null).commit()
+    }
+
+    override fun goToAutor() {
+        val fragment = FragmentAutor()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragm_cont,fragment)
+            .addToBackStack(null).commit()
+    }
+    override fun goToInfo(id : Long) {
+        val fragment = FragmentInfo()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragm_cont,fragment)
             .addToBackStack(null).commit()

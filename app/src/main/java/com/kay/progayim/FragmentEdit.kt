@@ -3,6 +3,7 @@ package com.kay.progayim
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.kay.progayim.databinding.FragmEditBinding
 
@@ -22,16 +23,21 @@ class FragmentEdit : Fragment(R.layout.fragm_edit) {
         binding1 = FragmEditBinding.bind(view)
 
         binding.apply {
-            btnEdit.setOnClickListener {
+            btn.setOnClickListener {
                 val id = arguments?.getLong("id")!!
-                val e = dbInstance.employeeDao().getById(id)
-                if (empName.text.toString().isNotEmpty() && empComp.text.toString().isNotEmpty() && empSalary.text.toString().isNotEmpty()  ) {
-                    e.name = empName.text.toString()
-                    e.company = empComp.text.toString()
-                    e.salary = empSalary.text.toString().toInt()
+                val e = dbInstance.userDao().getById(id)
+                if (name.text.toString().isNotEmpty() && lastname.text.toString().isNotEmpty() && age.text.toString().isNotEmpty() && gender.text.toString().isNotEmpty() && passwd.text.toString().isNotEmpty()) {
+                    e.name = name.text.toString()
+                    e.lastname = lastname.text.toString()
+                    e.age = age.text.toString().toInt()
+                    e.gender  = gender.toString()
+                    e.passwd = passwd.toString()
 
-                    dbInstance.employeeDao().update(e)
+                    dbInstance.userDao().update(e)
                     requireActivity().onBackPressed()
+                }
+                else{
+                    Toast.makeText(context, "Заполните все поля !", Toast.LENGTH_SHORT).show()
                 }
             }
         }

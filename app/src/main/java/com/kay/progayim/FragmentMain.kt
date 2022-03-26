@@ -31,8 +31,8 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
                 listener.goToInfo(it)
             },
             del = {
-                val emp = dbInstance.employeeDao().getById(it)
-                dbInstance.employeeDao().delete(emp)
+                val emp = dbInstance.userDao().getById(it)
+                dbInstance.userDao().delete(emp)
             }
         )
         {
@@ -44,11 +44,8 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             recycler.adapter = adapter
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
-            btnAdd.setOnClickListener{
-                listener.goToAdd()
-            }
         }
-        val empList = dbInstance.employeeDao().getAll()
+        val empList = dbInstance.userDao().getAll()
         adapter.setData(empList)
     }
 

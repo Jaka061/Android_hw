@@ -24,10 +24,12 @@ class FragmentInfo : Fragment(R.layout.fragm_info) {
 
         binding.apply {
             val id = arguments?.getLong("id")!!
-            val e = dbInstance.employeeDao().getById(id)
-            dbName.text = e.name
-            dbComp.text = e.company
-            dbSalary.text = e.salary.toString()
+            val e = dbInstance.userDao().getById(id)
+            Name.text = e.name
+            lastname.text = e.lastname
+            age.text = e.age.toString()
+            gender.text = e.gender
+            passwd.text = e.passwd
 
             btn.setOnClickListener {
                requireActivity().onBackPressed()
