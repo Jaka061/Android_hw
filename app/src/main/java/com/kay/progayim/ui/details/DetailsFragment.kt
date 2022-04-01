@@ -41,12 +41,20 @@ class DetailsFragment: Fragment() {
         detailVM.event.observe(viewLifecycleOwner,{
             when(it){
                 is Event.FetchedCh -> {
-                    binding.rName.text = it.character.name
-                    binding.rStatus.text = it.character.status
+                    setInfoCh(it)
                 }
                 else -> {}
             }
         })
+    }
+
+    private fun setInfoCh(it: Event.FetchedCh) {
+        binding.rName.text = it.character.name
+        binding.rStatus.text = it.character.status
+        binding.rSpecies.text = it.character.species
+        binding.rGender.text = it.character.gender
+        binding.rUrl.text = it.character.url
+        binding.rCreated.text = it.character.created
     }
 
     companion object{
