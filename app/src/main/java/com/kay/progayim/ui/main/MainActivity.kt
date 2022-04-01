@@ -20,11 +20,14 @@ class MainActivity : AppCompatActivity(), OnClick {
         }
     }
 
-    override fun openFragm(fragment: Fragment,addToBackStack : Boolean) {
+    override fun openFragm(fragment: Fragment, addToBackStack: Boolean?) {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.container, fragment)
-            .addToBackStack("")
+            .replace(R.id.container, fragment).apply {
+                if (addToBackStack == true) {
+                    addToBackStack(null)
+                }
+            }
             .commit()
     }
 }
