@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProgAyimApp</string>
+
+    <string name="no_internet">NO INTERNET</string>
+    <string name="unknown_error"> UNKNOWN ERROR</string>
+    <string name="loading"> LOADING</string>
+    <string name="finished_loading">LOADING STOPPED</string>
+</resources>
