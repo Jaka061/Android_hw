@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import com.kay.progayim.*
 import com.kay.progayim.data.repo.RickAndMortyRepo
 import com.kay.progayim.data.models.Characters
@@ -29,10 +28,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val deleteCharactersUseCase = DeleteCharactersUseCase(rickAndMortyRepo)
     private val getCharactersAsLiveUseCase = GetCharactersAsLiveDataUseCase(rickAndMortyRepo)
     val charactersLiveData: LiveData<List<Characters>> = getCharactersAsLiveUseCase()
-
-    val episodesCounterViaMap: LiveData<Int> = Transformations.map(charactersLiveData) {
-        if (it.isEmpty()) 0 else it[0].episode.count()
-    }
 
     private val _event = MutableLiveData<Event?>()
     val event: LiveData<Event?>
@@ -62,12 +57,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.clear()
-    }
-
-    fun deleteEp(){
-        compositeDisposable.add(
-            deleteCharactersUseCase().subscribe()
-        )
     }
 
     fun clearEvents() {
