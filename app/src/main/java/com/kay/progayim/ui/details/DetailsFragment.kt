@@ -41,7 +41,7 @@ class DetailsFragment: Fragment() {
         detailVM.event.observe(viewLifecycleOwner,{
             when(it){
                 is Event.FetchedCh -> binding.rName.text = it.character.name
-                is Event.FetchedCh -> binding.rStatus.text = it.character.status
+                    //is Event.FetchedCh -> binding.rStatus.text = it.character.status
 
                 else -> {}
             }
