@@ -16,11 +16,11 @@ class MainActivity : AppCompatActivity(), OnClick {
         setContentView(binding.root)
 
         if(savedInstanceState == null){
-            openFragm(MainFragment())
+            openFragm(MainFragment(),false)
         }
     }
 
-    override fun openFragm(fragment: Fragment) {
+    override fun openFragm(fragment: Fragment,addToBackStack : Boolean) {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.container, fragment)
