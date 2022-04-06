@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kay.progayim.databinding.FragmMainBinding
+import com.kay.progayim.databinding.FragmSortgenderBinding
 
-class FragmentMain : Fragment(R.layout.fragm_main) {
-    private var binding1 : FragmMainBinding? = null
+class FragmentSortGender : Fragment(R.layout.fragm_sortgender) {
+    private var binding1 : FragmSortgenderBinding? = null
     private val binding get() = binding1!!
 
     private lateinit var listener : OnBtnClicked
@@ -24,7 +24,7 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding1 = FragmMainBinding.bind(view)
+        binding1 = FragmSortgenderBinding.bind(view)
 
         val id = arguments?.getLong("id")!!
         val user = dbInstance.userDao().getById(id)
@@ -42,7 +42,7 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             },
             del = {
                 val emp = dbInstance.userDao().getById(it)
-                if (user == emp) {
+                if (emp == user ) {
                     dbInstance.userDao().delete(emp)
                 }
                 else Toast.makeText(context, "У вас нет доступа !", Toast.LENGTH_SHORT).show()
@@ -50,32 +50,40 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             upd = {
                 val emp = dbInstance.userDao().getById(it)
                 if (emp == user) {
-                listener.goTOEdit(it)
+                    listener.goTOEdit(it)
                 }
                 else Toast.makeText(context, "У вас нет доступа !", Toast.LENGTH_SHORT).show()
             }
         )
-
         binding.apply {
             recycler.layoutManager = layoutManager
             recycler.adapter = adapter
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
-            val empList = dbInstance.userDao().getAll()
-            adapter.setData(empList)
-
-            sortByName.setOnClickListener{
-                listener.sortByName(id)
+            sortF.setOnClickListener {
+                val empList = dbInstance.userDao().getAll()
+                val user = empList.filter {
+                    it.gender == "F"
+                }
+                if (user != null) {
+                    adapter.setData(user)
+                }else{
+                    Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
+                }
             }
-            sortByAge.setOnClickListener{
-                listener.sortByAge(id)
-            }
-            sortByGender.setOnClickListener{
-                listener.sortByGender(id)
+            sortM.setOnClickListener {
+                val empList = dbInstance.userDao().getAll()
+                val user = empList.filter {
+                    it.gender == "M"
+                }
+                if (user != null) {
+                    adapter.setData(user)
+                }else{
+                    Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding1 = null

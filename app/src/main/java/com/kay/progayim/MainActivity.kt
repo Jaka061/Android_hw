@@ -21,14 +21,18 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
         val fragment = FragmentAdd()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragm_cont,fragment)
-            .addToBackStack(null).commit()
+            .addToBackStack(null)
+           .commit()
     }
 
-    override fun goMain() {
+    override fun goMain(id: Long) {
         val fragment = FragmentMain()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragm_cont,fragment)
-            .addToBackStack(null).commit()
+            .commit()
     }
 
     override fun goToAutor() {
@@ -37,6 +41,7 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
             .replace(R.id.fragm_cont,fragment)
             .addToBackStack(null).commit()
     }
+
     override fun goToInfo(id : Long) {
         val fragment = FragmentInfo()
         val bundle = Bundle()
@@ -44,7 +49,7 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragm_cont,fragment)
-            .addToBackStack(null).commit()
+            .commit()
     }
 
     override fun goTOEdit(id: Long) {
@@ -55,6 +60,35 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragm_cont, fragment)
                 .addToBackStack(null).commit()
+    }
+    override fun sortByName(id: Long) {
+        val fragment = FragmentSortName()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragm_cont, fragment)
+            .addToBackStack(null).commit()
+    }
+
+    override fun sortByAge(id: Long) {
+        val fragment = FragmentSortAge()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragm_cont, fragment)
+            .addToBackStack(null).commit()
+    }
+
+    override fun sortByGender(id: Long) {
+        val fragment = FragmentSortGender()
+        val bundle = Bundle()
+        bundle.putLong("id", id)
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragm_cont, fragment)
+            .addToBackStack(null).commit()
     }
 
 }

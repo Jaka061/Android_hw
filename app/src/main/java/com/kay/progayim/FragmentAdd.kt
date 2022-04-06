@@ -2,8 +2,6 @@ package com.kay.progayim
 
 import android.content.Context
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -13,7 +11,6 @@ import com.kay.progayim.databinding.FragmAddBinding
 class FragmentAdd : Fragment(R.layout.fragm_add) {
     private var binding1 : FragmAddBinding? = null
     private val binding get() = binding1!!
-    //private val pref get() = Injector.preferences
     private lateinit var listener : OnBtnClicked
     private val dbInstance get() = Injector.database
 
@@ -28,9 +25,6 @@ class FragmentAdd : Fragment(R.layout.fragm_add) {
 
         binding.apply {
             btn.setOnClickListener {
-//                pref.saveLogin("login", name.text.toString())
-//                pref.savePassword("password", passwd.text.toString())
-//                Toast.makeText(context, "Готово !", Toast.LENGTH_SHORT).show()
 
                 if (name.text.toString().isNotEmpty() && lastname.text.toString().isNotEmpty() && age.text.toString().isNotEmpty() && gender.text.toString().isNotEmpty() && passwd.text.toString().isNotEmpty()) {
                     val e = User(
@@ -47,9 +41,7 @@ class FragmentAdd : Fragment(R.layout.fragm_add) {
                     Toast.makeText(context, "Заполните все поля !", Toast.LENGTH_SHORT).show()
                 }
             }
-
         }
-
     }
     override fun onDestroyView() {
         super.onDestroyView()

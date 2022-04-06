@@ -5,6 +5,18 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_light">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/NameI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@id/lastnameI"
+        app:layout_constraintEnd_toStartOf="@id/Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Name"
@@ -15,9 +27,22 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@id/lastname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/NameI"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lastnameI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lastname"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/NameI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/lastname"
+        app:layout_constraintBottom_toTopOf="@id/ageI"
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/lastname"
@@ -27,10 +52,24 @@
         android:textSize="28sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/Name"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lastnameI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/age"
         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ageI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/lastnameI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/age"
+        app:layout_constraintBottom_toTopOf="@id/genderI"
+        />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/age"
         android:layout_width="wrap_content"
@@ -39,9 +78,22 @@
         android:textSize="28sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/lastname"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ageI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/gender"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/genderI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/ageI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gender"
+        app:layout_constraintBottom_toTopOf="@id/passwdI"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -52,9 +104,22 @@
         android:textSize="28sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/age"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/genderI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/passwd"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/passwdI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/genderI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/passwd"
+        app:layout_constraintBottom_toTopOf="@id/btn"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -65,7 +130,7 @@
         android:textSize="28sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/gender"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/passwdI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btn"
         />
@@ -80,7 +145,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwd" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

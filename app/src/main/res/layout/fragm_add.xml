@@ -54,7 +54,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/gender"
         />
-
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/gender"
         android:layout_width="match_parent"
@@ -67,13 +66,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/passwd"
         />
-
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/passwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Edit"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:hint="@string/password"
         app:layout_constraintTop_toBottomOf="@+id/gender"
         app:layout_constraintEnd_toEndOf="parent"

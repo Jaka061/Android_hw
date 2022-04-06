@@ -32,23 +32,21 @@ class FragmentAutor : Fragment(R.layout.fragm_autor) {
             name.addTextChangedListener(textWatcher)
             passwd.addTextChangedListener(textWatcher)
 
-            val num = dbInstance.userDao().getLast()
-            val e = dbInstance.userDao().getById(id = i)
+            val num = dbInstance.userDao().getAll()
 
             btn.setOnClickListener {
-                Log.e("Id","= $i")
-                if (name.text.toString() == e.name && passwd.text.toString() == e.passwd) {
-                    listener.goMain()
+                val user = num.find {
+                    it.name == name.text.toString()  && it.passwd == passwd.text.toString()
                 }
-                else  {
-                    i++
-                }
+
+                if(user != null) listener.goMain(user.id!!)
+                else Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
+
             }
             btn2.setOnClickListener {
                 listener.goToAdd()
             }
         }
-        i = 0
 
     }
     private val textWatcher = object: TextWatcher {

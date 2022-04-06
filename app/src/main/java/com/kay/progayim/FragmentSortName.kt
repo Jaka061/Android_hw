@@ -8,13 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kay.progayim.databinding.FragmMainBinding
+import com.kay.progayim.databinding.FragmSortnameBinding
 
-class FragmentMain : Fragment(R.layout.fragm_main) {
-    private var binding1 : FragmMainBinding? = null
+class FragmentSortName : Fragment(R.layout.fragm_sortname) {
+    private var binding1: FragmSortnameBinding? = null
     private val binding get() = binding1!!
 
-    private lateinit var listener : OnBtnClicked
+    private lateinit var listener: OnBtnClicked
     private val dbInstance get() = Injector.database
 
     override fun onAttach(context: Context) {
@@ -24,8 +24,7 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding1 = FragmMainBinding.bind(view)
-
+        binding1 = FragmSortnameBinding.bind(view)
         val id = arguments?.getLong("id")!!
         val user = dbInstance.userDao().getById(id)
 
@@ -42,7 +41,7 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             },
             del = {
                 val emp = dbInstance.userDao().getById(it)
-                if (user == emp) {
+                if (emp == user) {
                     dbInstance.userDao().delete(emp)
                 }
                 else Toast.makeText(context, "У вас нет доступа !", Toast.LENGTH_SHORT).show()
@@ -50,7 +49,7 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             upd = {
                 val emp = dbInstance.userDao().getById(it)
                 if (emp == user) {
-                listener.goTOEdit(it)
+                    listener.goTOEdit(it)
                 }
                 else Toast.makeText(context, "У вас нет доступа !", Toast.LENGTH_SHORT).show()
             }
@@ -62,16 +61,11 @@ class FragmentMain : Fragment(R.layout.fragm_main) {
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
             val empList = dbInstance.userDao().getAll()
-            adapter.setData(empList)
-
-            sortByName.setOnClickListener{
-                listener.sortByName(id)
-            }
-            sortByAge.setOnClickListener{
-                listener.sortByAge(id)
-            }
-            sortByGender.setOnClickListener{
-                listener.sortByGender(id)
+            btn.setOnClickListener {
+                val user = empList.filter {
+                    it.name == name.text.toString()
+                }
+                adapter.setData(user)
             }
         }
     }

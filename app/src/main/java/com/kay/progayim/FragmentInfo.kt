@@ -9,7 +9,6 @@ import com.kay.progayim.databinding.FragmInfoBinding
 class FragmentInfo : Fragment(R.layout.fragm_info) {
     private var binding1 : FragmInfoBinding? = null
     private val binding get() = binding1!!
-
     private lateinit var listener : OnBtnClicked
     private val dbInstance get() = Injector.database
 

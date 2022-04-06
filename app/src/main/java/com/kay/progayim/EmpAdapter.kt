@@ -10,9 +10,12 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kay.progayim.database.User
 
-class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Long) -> Unit,private val upd: (id: Long) -> Unit) : RecyclerView.Adapter<EmpAdapter.ViewHolder>(){
+class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Long) -> Unit,
+                 private val upd: (id: Long) -> Unit
+) : RecyclerView.Adapter<EmpAdapter.ViewHolder>(){
 
     private var list = mutableListOf<User>()
+
     fun setData(list: List<User>) {
         this.list = list as MutableList<User>
         notifyDataSetChanged()
@@ -20,12 +23,12 @@ class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Lo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val item: View = LayoutInflater.from(parent.context).inflate(R.layout.recycle, parent, false)
-        return ViewHolder(item , click , del ,upd)
+        return ViewHolder(item , click , del ,upd )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val emp = list[position]
-        holder.bind(emp,position)
+        holder.bind(emp)
     }
 
     override fun getItemCount(): Int {
@@ -34,8 +37,7 @@ class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Lo
 
     inner class ViewHolder(itemView: View, private val click: (id: Long) -> Unit,private val del: (id: Long) -> Unit,private val upd: (id: Long) -> Unit ) :
         RecyclerView.ViewHolder(itemView) {
-
-        fun bind(emp: User, position: Int) {
+            fun bind(emp: User) {
             val id = itemView.findViewById<AppCompatTextView>(R.id.dbId)
             val name = itemView.findViewById<AppCompatTextView>(R.id.dbName)
             val update = itemView.findViewById<AppCompatButton>(R.id.btnUpdate)
@@ -52,21 +54,9 @@ class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Lo
                 upd.invoke(emp.id!!)
             }
             delete.setOnClickListener {
-                val builder1 = AlertDialog.Builder(itemView.context)
-                builder1.setMessage("Are you sure you want to delete this Emp")
-                builder1.setCancelable(true)
-
-                builder1.setPositiveButton("Yes") {
-                        dialog, id -> del.invoke(emp.id!!)
-                        notifyItemRemoved(adapterPosition)
-                        list.removeAt(position)
-                }
-                builder1.setNegativeButton("No") {
-                        dialog, id -> dialog.cancel()
-                }
-                val alert11 = builder1.create()
-                alert11.show()
+                 del.invoke(emp.id!!)
             }
+
         }
-    }
+        }
 }
