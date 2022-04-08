@@ -21,8 +21,10 @@ class ViewHolder(private val binding: RecycleBinding) : RecyclerView.ViewHolder(
     }
 
     companion object {
-        fun create(view: ViewGroup, listener: CharacterAdapter.Listener): ViewHolder {
-            val binding = LayoutInflater.from(view.context).inflate(R.layout.recycle,view)
+        fun create(parent: ViewGroup, listener: CharacterAdapter.Listener):ViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.recycle,parent,false)
+
+            val binding = RecycleBinding.bind(view)
 
             return ViewHolder(binding).apply {
                 itemView.setOnClickListener {
@@ -31,4 +33,5 @@ class ViewHolder(private val binding: RecycleBinding) : RecyclerView.ViewHolder(
             }
         }
     }
+
 }

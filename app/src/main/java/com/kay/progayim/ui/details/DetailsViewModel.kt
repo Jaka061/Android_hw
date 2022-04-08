@@ -25,7 +25,7 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
 
 
     private val rickAndMortyRepo = RickAndMortyRepo(
-        getApplication<App>().rickandmortyApi,
+        getApplication<App>().rickAndMortyApi,
         getApplication<App>().database.characterDao()
     )
 
