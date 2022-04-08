@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.kay.progayim.R
 import com.kay.progayim.data.models.Characters
 import com.kay.progayim.databinding.RecycleBinding
 
@@ -21,7 +22,7 @@ class ViewHolder(private val binding: RecycleBinding) : RecyclerView.ViewHolder(
 
     companion object {
         fun create(view: ViewGroup, listener: CharacterAdapter.Listener): ViewHolder {
-            val binding = RecycleBinding.inflate(LayoutInflater.from(view.context))
+            val binding = LayoutInflater.from(view.context).inflate(R.layout.recycle,view)
 
             return ViewHolder(binding).apply {
                 itemView.setOnClickListener {
