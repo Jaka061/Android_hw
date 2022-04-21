@@ -26,12 +26,10 @@ class FragmentAdd : Fragment(R.layout.fragm_add) {
         binding.apply {
             btn.setOnClickListener {
 
-                if (name.text.toString().isNotEmpty() && lastname.text.toString().isNotEmpty() && age.text.toString().isNotEmpty() && gender.text.toString().isNotEmpty() && passwd.text.toString().isNotEmpty()) {
+                if (name.text.toString().isNotEmpty() && email.text.toString().isNotEmpty() &&  passwd.text.toString().isNotEmpty()) {
                     val e = User(
                         name = name.text.toString(),
-                        lastname = lastname.text.toString(),
-                        age = age.text.toString().toInt(),
-                        gender = gender.text.toString(),
+                        email = email.text.toString(),
                         passwd = passwd.text.toString()
                     )
                     dbInstance.userDao().insert(e)

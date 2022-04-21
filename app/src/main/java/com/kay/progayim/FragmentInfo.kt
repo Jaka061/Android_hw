@@ -25,7 +25,7 @@ class FragmentInfo : Fragment(R.layout.fragm_info) {
             val id = arguments?.getLong("id")!!
             val e = dbInstance.userDao().getById(id)
             Name.text = e.name
-            lastname.text = e.lastname
+            lastname.text = e.email
             age.text = e.age.toString()
             gender.text = e.gender
             passwd.text = e.passwd

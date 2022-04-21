@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light">
+    android:background="@drawable/bkgr">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt"
@@ -24,56 +24,35 @@
         android:layout_height="wrap_content"
         android:hint="@string/name"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/lastname"
+        android:background="@drawable/btn"
+        app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/lastname"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         style="@style/Edit"
         android:hint="@string/lastname"
+        android:background="@drawable/btn"
         app:layout_constraintTop_toBottomOf="@+id/name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/age"
-        />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Edit"
-        android:inputType="number"
-        android:hint="@string/age"
-        app:layout_constraintTop_toBottomOf="@+id/lastname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/gender"
-        />
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/gender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Edit"
-        android:inputType="text"
-        android:hint="@string/gender"
-        app:layout_constraintTop_toBottomOf="@+id/age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/passwd"
         />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/passwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Edit"
         android:inputType="textPassword"
+        android:background="@drawable/btn"
         android:hint="@string/password"
-        app:layout_constraintTop_toBottomOf="@+id/gender"
+        app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btn"
@@ -83,8 +62,8 @@
         android:id="@+id/btn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="Next"
-        android:background="@color/white"
+        android:text="Sign up"
+        android:background="@drawable/btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

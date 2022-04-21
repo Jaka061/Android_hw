@@ -60,28 +60,28 @@ class FragmentSortGender : Fragment(R.layout.fragm_sortgender) {
             recycler.adapter = adapter
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
-            sortF.setOnClickListener {
-                val empList = dbInstance.userDao().getAll()
-                val user = empList.filter {
-                    it.gender == "F"
-                }
-                if (user != null) {
-                    adapter.setData(user)
-                }else{
-                    Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
-                }
-            }
-            sortM.setOnClickListener {
-                val empList = dbInstance.userDao().getAll()
-                val user = empList.filter {
-                    it.gender == "M"
-                }
-                if (user != null) {
-                    adapter.setData(user)
-                }else{
-                    Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
-                }
-            }
+//            sortF.setOnClickListener {
+//                val empList = dbInstance.userDao().getAll()
+//                val user = empList.filter {
+//                    it.gender == "F"
+//                }
+//                if (user != null) {
+//                    adapter.setData(user)
+//                }else{
+//                    Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//            sortM.setOnClickListener {
+//                val empList = dbInstance.userDao().getAll()
+//                val user = empList.filter {
+//                    it.gender == "M"
+//                }
+//                if (user != null) {
+//                    adapter.setData(user)
+//                }else{
+//                    Toast.makeText(context, "Такого пользователя нет!", Toast.LENGTH_SHORT).show()
+//                }
+//            }
         }
     }
     override fun onDestroyView() {

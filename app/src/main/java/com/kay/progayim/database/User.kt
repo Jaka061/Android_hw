@@ -8,8 +8,6 @@ data class User(
     @PrimaryKey(autoGenerate = true)
     val id: Long? = null,
     var name: String,
-    var lastname: String,
-    var age: Int,
-    var gender : String,
+    var email: String,
     var passwd : String
 )

@@ -26,11 +26,9 @@ class FragmentEdit : Fragment(R.layout.fragm_edit) {
             btn.setOnClickListener {
                 val id = arguments?.getLong("id")!!
                 val e = dbInstance.userDao().getById(id)
-                if (name.text.toString().isNotEmpty() && lastname.text.toString().isNotEmpty() && age.text.toString().isNotEmpty() && gender.text.toString().isNotEmpty() && passwd.text.toString().isNotEmpty()) {
+                if (name.text.toString().isNotEmpty() && lastname.text.toString().isNotEmpty() && passwd.text.toString().isNotEmpty()) {
                     e.name = name.text.toString()
-                    e.lastname = lastname.text.toString()
-                    e.age = age.text.toString().toInt()
-                    e.gender  = gender.toString()
+                    e.email = lastname.text.toString()
                     e.passwd = passwd.toString()
 
                     dbInstance.userDao().update(e)
