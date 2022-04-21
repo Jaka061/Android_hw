@@ -10,13 +10,14 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.kay.progayim.databinding.FragmAddBinding
 import com.kay.progayim.databinding.FragmAutorBinding
+import okhttp3.internal.userAgent
 
 class FragmentAutor : Fragment(R.layout.fragm_autor) {
     private var binding1 : FragmAutorBinding? = null
     private val binding get() = binding1!!
-    var i : Long = 1
     private lateinit var listener : OnBtnClicked
     private val dbInstance get() = Injector.database
+    private val user get() = Injector.api
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -34,6 +35,7 @@ class FragmentAutor : Fragment(R.layout.fragm_autor) {
 
             val num = dbInstance.userDao().getAll()
 
+            val user1  = user.getAll()
             btn.setOnClickListener {
                 val user = num.find {
                     it.name == name.text.toString()  && it.passwd == passwd.text.toString()

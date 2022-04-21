@@ -61,13 +61,13 @@ class FragmentSortAge : Fragment(R.layout.fragm_sortage) {
             recycler.adapter = adapter
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
 
-            btn2.setOnClickListener {
-                val empList = dbInstance.userDao().getAll()
-                val user = empList.filter {
-                    it.age == age.text.toString().toInt()
-                }
-                adapter.setData(user)
-            }
+//            btn2.setOnClickListener {
+//                val empList = dbInstance.userDao().getAll()
+//                val user = empList.filter {
+//                    it.age == age.text.toString().toInt()
+//                }
+//                adapter.setData(user)
+//            }
         }
     }
     override fun onDestroyView() {

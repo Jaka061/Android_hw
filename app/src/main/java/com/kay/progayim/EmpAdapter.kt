@@ -4,11 +4,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
-import com.kay.progayim.database.User
+import com.kay.progayim.data.models.User
 
 class EmpAdapter(private val click: (id: Long) -> Unit, private val del: (id: Long) -> Unit,
                  private val upd: (id: Long) -> Unit

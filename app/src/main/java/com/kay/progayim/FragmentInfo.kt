@@ -26,8 +26,6 @@ class FragmentInfo : Fragment(R.layout.fragm_info) {
             val e = dbInstance.userDao().getById(id)
             Name.text = e.name
             lastname.text = e.email
-            age.text = e.age.toString()
-            gender.text = e.gender
             passwd.text = e.passwd
 
             btn.setOnClickListener {
