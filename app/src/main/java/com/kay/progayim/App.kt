@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.viewbinding.BuildConfig
 import com.kay.progayim.data.network.RickandmortyApi
 import com.kay.progayim.data.storage.AppDatabase
-import dagger.hilt.android.HiltAndroidApp
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
