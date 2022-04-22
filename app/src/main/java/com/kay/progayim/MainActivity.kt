@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() , OnBtnClicked {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragm_cont, FragmentAutor())
+            .add(R.id.fragm_cont, FragmentMain())
             .commit()
     }
 

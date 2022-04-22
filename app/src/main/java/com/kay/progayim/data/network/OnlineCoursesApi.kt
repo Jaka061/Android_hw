@@ -19,7 +19,7 @@ interface OnlineCoursesApi {
     @GET("/users/{id}")
     fun getUserById(@Path("id") id: Long) : Single<UserDto>
 
-    @GET("/users/")
+    @GET("/allusers")
     fun getAll(): Observable<List<UserDto>>
 
 }

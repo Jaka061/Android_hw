@@ -13,7 +13,7 @@ class FragmentAdd : Fragment(R.layout.fragm_add) {
     private val binding get() = binding1!!
     private lateinit var listener : OnBtnClicked
     private val dbInstance get() = Injector.database
-    private val courses get() = Injector.api
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
