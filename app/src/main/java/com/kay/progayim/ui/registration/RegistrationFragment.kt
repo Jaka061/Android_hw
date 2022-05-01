@@ -2,6 +2,7 @@ package com.kay.progayim.ui.registration
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -10,8 +11,9 @@ import com.kay.progayim.R
 import com.kay.progayim.data.models.User
 import com.kay.progayim.databinding.FragmRegistBinding
 import com.kay.progayim.ui.OnClick
+import com.kay.progayim.ui.details.DetailsFragment
 
-class FragmentRegistration : Fragment(R.layout.fragm_regist) {
+class RegistrationFragment : Fragment(R.layout.fragm_regist) {
     private var binding1 : FragmRegistBinding? = null
     private val binding get() = binding1!!
     private lateinit var listener : OnClick
@@ -32,9 +34,9 @@ class FragmentRegistration : Fragment(R.layout.fragm_regist) {
                 if (name.text.toString().isNotEmpty() && email.text.toString().isNotEmpty() &&  passwd.text.toString().isNotEmpty()) {
                     val e = User(
                         id = 1L,
-                        name = name.text.toString(),
+                        login = name.text.toString(),
                         email = email.text.toString(),
-                        passwd = passwd.text.toString()
+                        password = passwd.text.toString()
                     )
                     dbInstance.userDao().insert(e)
                     requireActivity().onBackPressed()

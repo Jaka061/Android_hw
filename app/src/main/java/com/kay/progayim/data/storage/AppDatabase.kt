@@ -9,7 +9,7 @@ import com.kay.progayim.data.models.Courses
 @Database(entities = [Courses::class], version = 1)
 abstract class AppDatabase: RoomDatabase()  {
 
-    abstract fun characterDao(): CourseDao
+    abstract fun courseDao(): CourseDao
     abstract fun userDao(): UserDao
 
 }

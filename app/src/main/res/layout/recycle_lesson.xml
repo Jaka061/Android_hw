@@ -6,7 +6,7 @@
     android:layout_height="60dp"
     android:layout_margin="20dp"
     android:padding="5dp"
-    android:background="@drawable/bkgr"
+    android:background="@drawable/background"
     tools:context=".ui.main.MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView

@@ -7,7 +7,14 @@ import androidx.room.PrimaryKey
 data class User(
     @PrimaryKey(autoGenerate = true)
     val id: Long? = null,
-    var name: String,
+    var login: String,
     var email: String,
-    var passwd : String
+    //var role: Role,
+    var password : String
 )
+//
+//@Entity
+//data class Role(
+//    val admin:String,
+//    val user:String
+//)

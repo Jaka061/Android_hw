@@ -21,7 +21,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val rickAndMortyRepo = OnlineCoursesRepo(
         getApplication<App>().rickAndMortyApi,
-        getApplication<App>().database.characterDao()
+        getApplication<App>().database.courseDao()
     )
 
     private val getCharacterUseCase = GetCharacterUseCase(rickAndMortyRepo)

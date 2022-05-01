@@ -49,12 +49,9 @@ class DetailsFragment: Fragment() {
     }
 
     private fun setInfoCh(it: Event.FetchedCh) {
-        binding.rName.text = it.character.name
-        binding.rStatus.text = it.character.status
-        binding.rSpecies.text = it.character.species
-        binding.rGender.text = it.character.gender
-        binding.rUrl.text = it.character.url
-        binding.rCreated.text = it.character.created
+        binding.login.text = it.character.name
+        binding.email.text = it.character.status
+        binding.password.text = it.character.species
     }
 
     companion object{
