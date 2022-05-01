@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.kay.progayim.App
-import com.kay.progayim.data.repo.RickAndMortyRepo
+import com.kay.progayim.data.repo.OnlineCoursesRepo
 import com.kay.progayim.domain.use_cases.GetCharacterByIdUseCase
 import com.kay.progayim.ui.Event
 import io.reactivex.disposables.CompositeDisposable
@@ -24,7 +24,7 @@ class DetailsViewModel(application: Application) : AndroidViewModel(application)
         get() = event1
 
 
-    private val rickAndMortyRepo = RickAndMortyRepo(
+    private val rickAndMortyRepo = OnlineCoursesRepo(
         getApplication<App>().rickAndMortyApi,
         getApplication<App>().database.characterDao()
     )

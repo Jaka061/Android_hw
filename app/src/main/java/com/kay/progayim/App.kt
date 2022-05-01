@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.room.Room
 import androidx.viewbinding.BuildConfig
-import com.kay.progayim.data.network.RickandmortyApi
+import com.kay.progayim.data.network.OnlineCoursesApi
 import com.kay.progayim.data.storage.AppDatabase
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,11 +13,10 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
 class App : Application() {
 
     private val isDebug get() = BuildConfig.DEBUG
-    lateinit var rickAndMortyApi: RickandmortyApi
+    lateinit var rickAndMortyApi: OnlineCoursesApi
     lateinit var database: AppDatabase
 
     override fun onCreate() {
@@ -26,25 +25,24 @@ class App : Application() {
         database = Room.databaseBuilder(this, AppDatabase::class.java, "database")
             .fallbackToDestructiveMigration()
             .build()
-
-        App.mInstance = this
+        mInstance = this
 
         val okHttpClient = OkHttpClient.Builder()
-            .connectTimeout(App.TIMEOUT, TimeUnit.SECONDS)
-            .readTimeout(App.TIMEOUT, TimeUnit.SECONDS)
-            .writeTimeout(App.TIMEOUT, TimeUnit.SECONDS)
+            .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
+            .readTimeout(TIMEOUT, TimeUnit.SECONDS)
+            .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
             .addInterceptor(httpLoggingInterceptor())
             .addInterceptor(httpHeaderLoggingInterceptor())
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(App.BASE_URL)
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        rickAndMortyApi = retrofit.create(RickandmortyApi::class.java)
+        rickAndMortyApi = retrofit.create(OnlineCoursesApi::class.java)
     }
 
     private fun httpLoggingInterceptor(): HttpLoggingInterceptor {
@@ -69,8 +67,7 @@ class App : Application() {
         private var mInstance: App? = null
         val instance get() = mInstance!!
     }
-
 }
 
-val Any.Injector: App
+val Injector: App
     get() = App.instance

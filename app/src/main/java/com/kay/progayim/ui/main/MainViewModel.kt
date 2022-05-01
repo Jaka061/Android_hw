@@ -5,8 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.kay.progayim.*
-import com.kay.progayim.data.repo.RickAndMortyRepo
-import com.kay.progayim.data.models.Characters
+import com.kay.progayim.data.repo.OnlineCoursesRepo
+import com.kay.progayim.data.models.Courses
 import com.kay.progayim.domain.use_cases.DeleteCharactersUseCase
 import com.kay.progayim.domain.use_cases.GetCharacterUseCase
 import com.kay.progayim.domain.use_cases.GetCharactersAsLiveDataUseCase
@@ -19,7 +19,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
-    private val rickAndMortyRepo = RickAndMortyRepo(
+    private val rickAndMortyRepo = OnlineCoursesRepo(
         getApplication<App>().rickAndMortyApi,
         getApplication<App>().database.characterDao()
     )
@@ -27,7 +27,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val getCharacterUseCase = GetCharacterUseCase(rickAndMortyRepo)
     private val deleteCharactersUseCase = DeleteCharactersUseCase(rickAndMortyRepo)
     private val getCharactersAsLiveUseCase = GetCharactersAsLiveDataUseCase(rickAndMortyRepo)
-    val charactersLiveData: LiveData<List<Characters>> = getCharactersAsLiveUseCase()
+    val coursesLiveData: LiveData<List<Courses>> = getCharactersAsLiveUseCase()
 
     private val _event = MutableLiveData<Event?>()
     val event: LiveData<Event?>
@@ -63,7 +63,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _event.value = null
     }
 
-    fun getCharacterByIndex(index: Int): Characters? {
-        return charactersLiveData.value?.get(index)
+    fun getCharacterByIndex(index: Int): Courses? {
+        return coursesLiveData.value?.get(index)
     }
 }

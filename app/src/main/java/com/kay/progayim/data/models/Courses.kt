@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Characters(
+data class Courses(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String,
@@ -18,7 +18,3 @@ data class Characters(
     val location: Location,
     val episode: List<String>,
 )
-//data class Locations(
-//    var name: String,
-//    var url : String
-//)

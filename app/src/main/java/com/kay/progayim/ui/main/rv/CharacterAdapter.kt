@@ -3,13 +3,13 @@ package com.kay.progayim.ui.main.rv
 import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.kay.progayim.data.models.Characters
+import com.kay.progayim.data.models.Courses
 
 class CharacterAdapter(private val listener: Listener): RecyclerView.Adapter<ViewHolder>() {
 
-    private var list = listOf<Characters>()
+    private var list = listOf<Courses>()
 
-    fun setData(list: List<Characters>) {
+    fun setData(list: List<Courses>) {
         this.list = list
         notifyDataSetChanged()
         Log.e("id","kkkhh")

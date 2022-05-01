@@ -1,10 +1,10 @@
 package com.kay.progayim.extensions
 
-import com.kay.progayim.data.models.CharacterDto
-import com.kay.progayim.data.models.Characters
+import com.kay.progayim.data.models.CoursesDto
+import com.kay.progayim.data.models.Courses
 
-fun CharacterDto.toCharacters(): Characters {
-    return Characters(
+fun CoursesDto.toCharacters(): Courses {
+    return Courses(
         id = this.id,
         name = this.name,
         status = this.status,

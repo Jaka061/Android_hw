@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kay.progayim.databinding.FragmMainBinding
-import com.kay.progayim.extensions.showToast
 import com.kay.progayim.ui.details.DetailsFragment
-import com.kay.progayim.ui.Event
 import com.kay.progayim.ui.OnClick
 import com.kay.progayim.ui.main.rv.CharacterAdapter
 
@@ -61,26 +59,23 @@ class MainFragment: Fragment(), CharacterAdapter.Listener {
             recycler.layoutManager = layoutManager
             recycler.adapter = chAdapter
             recycler.addItemDecoration(DividerItemDecoration(activity, RecyclerView.VERTICAL))
-            swipeRefreshLayout.setOnRefreshListener {
-                mainVM.loadCharacters()
-            }
         }
     }
 
     private fun subscribeToLD(){
-        mainVM.charactersLiveData.observe(viewLifecycleOwner, {
+        mainVM.coursesLiveData.observe(viewLifecycleOwner, {
             chAdapter.setData(it)
             Log.e("id","llgggl")
         })
 
-        mainVM.event.observe(viewLifecycleOwner, {
-            when(it){
-                is Event.ShowToast -> showToast(getString(it.resId))
-                is Event.ShowLoading -> binding.swipeRefreshLayout.isRefreshing = true
-                is Event.StopLoading -> binding.swipeRefreshLayout.isRefreshing = false
-                else -> {}
-            }
-        })
+//        mainVM.event.observe(viewLifecycleOwner, {
+//            when(it){
+//                is Event.ShowToast -> showToast(getString(it.resId))
+//                is Event.ShowLoading -> binding.swipeRefreshLayout.isRefreshing = true
+//                is Event.StopLoading -> binding.swipeRefreshLayout.isRefreshing = false
+//                else -> {}
+//            }
+//        })
     }
 
     override fun onDestroyView() {

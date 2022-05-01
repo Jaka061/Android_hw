@@ -1,12 +1,12 @@
 package com.kay.progayim.domain.use_cases
 
-import com.kay.progayim.data.repo.RickAndMortyRepo
+import com.kay.progayim.data.repo.OnlineCoursesRepo
 import io.reactivex.Completable
 
-class DeleteCharactersUseCase(private val rickAndMortyRepo: RickAndMortyRepo) {
+class DeleteCharactersUseCase(private val onlineCoursesRepo: OnlineCoursesRepo) {
 
     operator fun invoke(): Completable {
-        return rickAndMortyRepo.deleteAll() // use case взяла полностью из вашего кода
+        return onlineCoursesRepo.deleteAll() // use case взяла полностью из вашего кода
     }
 
 }

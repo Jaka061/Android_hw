@@ -1,13 +1,13 @@
 package com.kay.progayim.domain.use_cases
 
 import androidx.lifecycle.LiveData
-import com.kay.progayim.data.models.Characters
-import com.kay.progayim.data.repo.RickAndMortyRepo
+import com.kay.progayim.data.models.Courses
+import com.kay.progayim.data.repo.OnlineCoursesRepo
 
 class GetCharactersAsLiveDataUseCase(
-   private val  repo: RickAndMortyRepo
+   private val  repo: OnlineCoursesRepo
 ) {
-    operator fun invoke(): LiveData<List<Characters>> {
+    operator fun invoke(): LiveData<List<Courses>> {
         return repo.getAllAsLive()
     }
 }

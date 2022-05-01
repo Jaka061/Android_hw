@@ -6,7 +6,7 @@
     android:layout_height="60dp"
     android:layout_margin="20dp"
     android:padding="5dp"
-    android:background="@android:color/holo_green_light"
+    android:background="@drawable/bkgr"
     tools:context=".ui.main.MainActivity">
 
     <androidx.appcompat.widget.AppCompatImageView

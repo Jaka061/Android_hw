@@ -1,10 +1,9 @@
 package com.kay.progayim.data.models
 
 data class ResponseDto(
-    val results: List<CharacterDto>
+    val results: List<CoursesDto>
 )
-
-data class CharacterDto(
+data class CoursesDto(
     val id: Long,
     val name: String,
     val status: String,
